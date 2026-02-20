@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book Store – Simple UI</title>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <h1>Book Store – Simple UI</h1>
+    <div class="row">
+        <nav>
+            <button class="tab active" data-view="books">Books</button>
+            <button class="tab" data-view="clients">Clients</button>
+            <button class="tab" data-view="employees">Employees</button>
+            <button class="tab" data-view="orders">Orders</button>
+        </nav>
+        <span class="pill">API: same origin</span>
+        <span class="muted">Tip: <a href="/h2-console" target="_blank" rel="noreferrer">H2 Console</a></span>
+    </div>
+</header>
+
+<main>
+    <div class="split">
+        <section class="card">
+            <!-- BOOKS -->
+            <div class="view" id="view-books">
+                <div class="actions">
+                    <button id="btn-books-refresh">Refresh books</button>
+                    <span class="muted">Read-only (your controller exposes only GET /books):contentReference[oaicite:5]{index=5}</span>
+                </div>
+                <div style="margin-top:10px" class="card">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th><th>Author</th><th>Genre</th><th>Price</th><th>Language</th><th>Age</th><th>Pub date</th><th>Pages</th>
+                        </tr>
+                        </thead>
+                        <tbody id="books-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CLIENTS -->
+            <div class="view" id="view-clients" hidden>
+                <div class="actions">
+                    <button id="btn-clients-refresh">List clients</button>
+                    <span class="muted">GET/POST/PUT/DELETE /clients:contentReference[oaicite:6]{index=6}</span>
+                </div>
+
+                <div class="grid cols2" style="margin-top:12px">
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Create client</h3>
+                        <form id="form-client-create" class="grid">
+                            <div>
+                                <label>Email</label>
+                                <input name="email" type="email" required placeholder="client@mail.com" />
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <input name="password" type="text" required />
+                            </div>
+                            <div>
+                                <label>Name</label>
+                                <input name="name" type="text" required />
+                            </div>
+                            <div>
+                                <label>Balance</label>
+                                <input name="balance" type="number" step="0.01" required value="0.00" />
+                            </div>
+                            <div class="actions">
+                                <button type="submit">Create</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Find / Update / Delete</h3>
+
+                        <form id="form-client-get" class="grid" style="margin-bottom:10px">
+                            <div>
+                                <label>Client email</label>
+                                <input name="email" type="email" required placeholder="client@mail.com" />
+                            </div>
+                            <div class="actions">
+                                <button type="submit">Get client</button>
+                            </div>
+                        </form>
+
+                        <form id="form-client-update" class="grid" style="margin-bottom:10px">
+                            <div>
+                                <label>Path email (who to update)</label>
+                                <input name="pathEmail" type="email" required placeholder="client@mail.com" />
+                            </div>
+                            <div class="grid cols2">
+                                <div>
+                                    <label>New password</label>
+                                    <input name="password" type="text" required />
+                                </div>
+                                <div>
+                                    <label>New name</label>
+                                    <input name="name" type="text" required />
+                                </div>
+                            </div>
+                            <div>
+                                <label>New balance</label>
+                                <input name="balance" type="number" step="0.01" required />
+                            </div>
+                            <div class="actions">
+                                <button type="submit">Update</button>
+                            </div>
+                        </form>
+
+                        <form id="form-client-delete" class="grid">
+                            <div>
+                                <label>Delete by email</label>
+                                <input name="email" type="email" required placeholder="client@mail.com" />
+                            </div>
+                            <div class="actions">
+                                <button type="submit" class="danger">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:12px">
+                    <h3 style="margin:0 0 10px">Clients</h3>
+                    <table>
+                        <thead><tr><th>Email</th><th>Name</th><th>Balance</th></tr></thead>
+                        <tbody id="clients-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- EMPLOYEES -->
+            <div class="view" id="view-employees" hidden>
+                <div class="actions">
+                    <button id="btn-employees-refresh">List employees</button>
+                    <span class="muted">GET/POST/PUT/DELETE /employees:contentReference[oaicite:7]{index=7}</span>
+                </div>
+
+                <div class="grid cols2" style="margin-top:12px">
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Create employee</h3>
+                        <form id="form-employee-create" class="grid">
+                            <div>
+                                <label>Email</label>
+                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <input name="password" type="text" required />
+                            </div>
+                            <div>
+                                <label>Name</label>
+                                <input name="name" type="text" required />
+                            </div>
+                            <div class="grid cols2">
+                                <div>
+                                    <label>Birth date</label>
+                                    <input name="birthDate" type="date" required />
+                                </div>
+                                <div>
+                                    <label>Phone</label>
+                                    <input name="phone" type="text" required placeholder="+995..." />
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button type="submit">Create</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Find / Update / Delete</h3>
+
+                        <form id="form-employee-get" class="grid" style="margin-bottom:10px">
+                            <div>
+                                <label>Employee email</label>
+                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                            </div>
+                            <div class="actions">
+                                <button type="submit">Get employee</button>
+                            </div>
+                        </form>
+
+                        <form id="form-employee-update" class="grid" style="margin-bottom:10px">
+                            <div>
+                                <label>Path email (who to update)</label>
+                                <input name="pathEmail" type="email" required placeholder="employee@mail.com" />
+                            </div>
+                            <div class="grid cols2">
+                                <div>
+                                    <label>New password</label>
+                                    <input name="password" type="text" required />
+                                </div>
+                                <div>
+                                    <label>New name</label>
+                                    <input name="name" type="text" required />
+                                </div>
+                            </div>
+                            <div class="grid cols2">
+                                <div>
+                                    <label>New birth date</label>
+                                    <input name="birthDate" type="date" required />
+                                </div>
+                                <div>
+                                    <label>New phone</label>
+                                    <input name="phone" type="text" required />
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button type="submit">Update</button>
+                            </div>
+                        </form>
+
+                        <form id="form-employee-delete" class="grid">
+                            <div>
+                                <label>Delete by email</label>
+                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                            </div>
+                            <div class="actions">
+                                <button type="submit" class="danger">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:12px">
+                    <h3 style="margin:0 0 10px">Employees</h3>
+                    <table>
+                        <thead><tr><th>Email</th><th>Name</th><th>Birth date</th><th>Phone</th></tr></thead>
+                        <tbody id="employees-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ORDERS -->
+            <div class="view" id="view-orders" hidden>
+                <div class="actions">
+                    <span class="muted">GET by client/employee + POST /orders:contentReference[oaicite:8]{index=8} (price is computed server-side):contentReference[oaicite:9]{index=9}</span>
+                </div>
+
+                <div class="grid cols2" style="margin-top:12px">
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Find orders</h3>
+
+                        <form id="form-orders-by-client" class="grid" style="margin-bottom:10px">
+                            <div>
+                                <label>Client email</label>
+                                <input name="email" type="email" required placeholder="client@mail.com" />
+                            </div>
+                            <div class="actions"><button type="submit">Get by client</button></div>
+                        </form>
+
+                        <form id="form-orders-by-employee" class="grid">
+                            <div>
+                                <label>Employee email</label>
+                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                            </div>
+                            <div class="actions"><button type="submit">Get by employee</button></div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Create order</h3>
+                        <form id="form-order-create" class="grid">
+                            <div class="grid cols2">
+                                <div>
+                                    <label>Client email</label>
+                                    <input name="clientEmail" type="email" required placeholder="client@mail.com" />
+                                </div>
+                                <div>
+                                    <label>Employee email</label>
+                                    <input name="employeeEmail" type="email" required placeholder="employee@mail.com" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label>Order date (LocalDateTime)</label>
+                                <input name="orderDate" type="datetime-local" required />
+                                <div class="muted">Sent as <code>YYYY-MM-DDTHH:mm:ss</code></div>
+                            </div>
+
+                            <div class="card" style="background:#0b0f14">
+                                <div class="actions" style="justify-content:space-between">
+                                    <div><strong>Book items</strong></div>
+                                    <button type="button" id="btn-add-item">+ Add item</button>
+                                </div>
+                                <div id="items-wrap" class="grid" style="margin-top:10px"></div>
+                                <div class="muted">Book must exist (backend searches by bookName):contentReference[oaicite:10]{index=10}</div>
+                            </div>
+
+                            <div class="actions">
+                                <button type="submit">Create order</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:12px">
+                    <h3 style="margin:0 0 10px">Orders (last query)</h3>
+                    <pre id="orders-pre">[]</pre>
+                </div>
+            </div>
+        </section>
+
+        <aside class="card">
+            <div class="actions" style="justify-content:space-between">
+                <strong>Response</strong>
+                <button id="btn-clear">Clear</button>
+            </div>
+            <pre id="out">Ready.</pre>
+            <div class="muted" style="margin-top:10px">
+                If you get <code>401</code> or a login prompt, authenticate first (Spring Security).<br/>
+                If you get <code>403</code> on POST/PUT/DELETE, it’s usually CSRF (needs SecurityConfig change).
+            </div>
+        </aside>
+    </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

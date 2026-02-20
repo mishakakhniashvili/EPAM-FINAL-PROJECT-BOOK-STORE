@@ -1,5 +1,42 @@
 package com.epam.rd.autocode.spring.project.controller;
 
+import com.epam.rd.autocode.spring.project.dto.ClientDTO;
+import com.epam.rd.autocode.spring.project.service.ClientService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/clients")
+@RequiredArgsConstructor
 public class ClientController {
-    // TODO Place your code here
+
+    private final ClientService clientService;
+
+    @GetMapping
+    public List<ClientDTO> getAllClients() {
+        return clientService.getAllClients();
+    }
+
+    @GetMapping("/{email:.+}")
+    public ClientDTO getClientByEmail(@PathVariable String email) {
+        return clientService.getClientByEmail(email);
+    }
+    @Valid
+    @PostMapping
+    public ClientDTO addClient(@RequestBody @Valid ClientDTO dto) {
+        return clientService.addClient(dto);
+    }
+    @Valid
+    @PutMapping("/{email:.+}")
+    public ClientDTO updateClientByEmail(@PathVariable String email, @RequestBody @Valid ClientDTO dto) {
+        return clientService.updateClientByEmail(email, dto);
+    }
+
+    @DeleteMapping("/{email:.+}")
+    public void deleteClientByEmail(@PathVariable String email) {
+        clientService.deleteClientByEmail(email);
+    }
 }

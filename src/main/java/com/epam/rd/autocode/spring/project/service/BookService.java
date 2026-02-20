@@ -1,6 +1,7 @@
 package com.epam.rd.autocode.spring.project.service;
 
 import com.epam.rd.autocode.spring.project.dto.BookDTO;
+import com.epam.rd.autocode.spring.project.model.Book;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface BookService {
     void deleteBookByName(String name);
 
     BookDTO addBook(BookDTO book);
+
+    List<Book> getAll();
 }
