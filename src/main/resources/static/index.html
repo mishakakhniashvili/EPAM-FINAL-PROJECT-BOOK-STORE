@@ -1,22 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <div class="lang-switch">
-        <button id="lang-en" type="button">EN</button>
-        <button id="lang-ka" type="button">KA</button>
-    </div>
-    <span id="auth-box" class="pill">Auth: guest</span>
-    <button id="btn-login" style="display:none">Login</button>
-    <button id="btn-logout" style="display:none">Logout</button>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Book Store – Simple UI</title>
-
     <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 <header>
     <h1>Book Store – Simple UI</h1>
+
     <div class="row">
         <nav>
             <button class="tab active" data-view="books">Books</button>
@@ -24,15 +18,27 @@
             <button class="tab" data-view="employees">Employees</button>
             <button class="tab" data-view="orders">Orders</button>
         </nav>
+
         <span class="pill">API: same origin</span>
         <span class="muted">Tip: <a href="/h2-console" target="_blank" rel="noreferrer">H2 Console</a></span>
+
+        <div class="lang-switch">
+            <button id="lang-en" type="button">EN</button>
+            <button id="lang-ka" type="button">KA</button>
+        </div>
+
+        <span id="auth-box" class="pill">Auth: guest</span>
+        <button id="btn-login" style="display:none">Login</button>
+        <button id="btn-logout" style="display:none">Logout</button>
+        <button id="btn-delete-account" class="danger" style="display:none">Delete my account</button>
     </div>
 </header>
 
 <main>
     <div class="split">
         <section class="card">
-            <!-- BOOKS -->
+
+            <!-- ===================== BOOKS ===================== -->
             <div class="view" id="view-books">
                 <div class="actions">
                     <button id="btn-books-refresh">Refresh books</button>
@@ -150,20 +156,21 @@
                     </table>
                 </div>
             </div>
-            <!-- EMPLOYEES -->
-            <div class="view" id="view-employees" hidden>
+
+            <!-- ===================== CLIENTS (EMPLOYEE-ONLY TAB) ===================== -->
+            <div class="view" id="view-clients" hidden>
                 <div class="actions">
-                    <button id="btn-employees-refresh">List employees</button>
-                    <span class="muted">GET/POST/PUT/DELETE /employees:contentReference[oaicite:7]{index=7}</span>
+                    <button id="btn-clients-refresh">List clients</button>
+                    <span class="muted">Employees only: GET/PUT/DELETE /clients/**. Anyone can POST /clients (registration).</span>
                 </div>
 
                 <div class="grid cols2" style="margin-top:12px">
                     <div class="card">
-                        <h3 style="margin:0 0 10px">Create employee</h3>
-                        <form id="form-employee-create" class="grid">
+                        <h3 style="margin:0 0 10px">Create client</h3>
+                        <form id="form-client-create" class="grid">
                             <div>
                                 <label>Email</label>
-                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                                <input name="email" type="email" required placeholder="client@mail.com" />
                             </div>
                             <div>
                                 <label>Password</label>
@@ -173,15 +180,9 @@
                                 <label>Name</label>
                                 <input name="name" type="text" required />
                             </div>
-                            <div class="grid cols2">
-                                <div>
-                                    <label>Birth date</label>
-                                    <input name="birthDate" type="date" required />
-                                </div>
-                                <div>
-                                    <label>Phone</label>
-                                    <input name="phone" type="text" required placeholder="+995..." />
-                                </div>
+                            <div>
+                                <label>Balance</label>
+                                <input name="balance" type="number" step="0.01" value="0" required />
                             </div>
                             <div class="actions">
                                 <button type="submit">Create</button>
@@ -192,20 +193,20 @@
                     <div class="card">
                         <h3 style="margin:0 0 10px">Find / Update / Delete</h3>
 
-                        <form id="form-employee-get" class="grid" style="margin-bottom:10px">
+                        <form id="form-client-get" class="grid" style="margin-bottom:10px">
                             <div>
-                                <label>Employee email</label>
-                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                                <label>Client email</label>
+                                <input name="email" type="email" required placeholder="client@mail.com" />
                             </div>
                             <div class="actions">
-                                <button type="submit">Get employee</button>
+                                <button type="submit">Get client</button>
                             </div>
                         </form>
 
-                        <form id="form-employee-update" class="grid" style="margin-bottom:10px">
+                        <form id="form-client-update" class="grid" style="margin-bottom:10px">
                             <div>
                                 <label>Path email (who to update)</label>
-                                <input name="pathEmail" type="email" required placeholder="employee@mail.com" />
+                                <input name="pathEmail" type="email" required placeholder="client@mail.com" />
                             </div>
                             <div class="grid cols2">
                                 <div>
@@ -217,29 +218,98 @@
                                     <input name="name" type="text" required />
                                 </div>
                             </div>
-                            <div class="grid cols2">
-                                <div>
-                                    <label>New birth date</label>
-                                    <input name="birthDate" type="date" required />
-                                </div>
-                                <div>
-                                    <label>New phone</label>
-                                    <input name="phone" type="text" required />
-                                </div>
+                            <div>
+                                <label>New balance</label>
+                                <input name="balance" type="number" step="0.01" required />
                             </div>
                             <div class="actions">
                                 <button type="submit">Update</button>
                             </div>
                         </form>
 
-                        <form id="form-employee-delete" class="grid">
+                        <form id="form-client-delete" class="grid">
                             <div>
                                 <label>Delete by email</label>
-                                <input name="email" type="email" required placeholder="employee@mail.com" />
+                                <input name="email" type="email" required placeholder="client@mail.com" />
                             </div>
                             <div class="actions">
                                 <button type="submit" class="danger">Delete</button>
                             </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Block/Unblock (EMPLOYEE) -->
+                <div class="card" style="margin-top:12px">
+                    <h3 style="margin:0 0 10px">Block / Unblock client</h3>
+                    <form id="form-client-blocking" class="grid">
+                        <div>
+                            <label>Client email</label>
+                            <input name="email" type="email" required placeholder="client@mail.com" />
+                        </div>
+                        <div class="actions">
+                            <button type="submit" data-action="block" class="danger">Block</button>
+                            <button type="submit" data-action="unblock">Unblock</button>
+                        </div>
+                        <div class="muted">Employees only</div>
+                    </form>
+                </div>
+
+                <div class="card" style="margin-top:12px">
+                    <h3 style="margin:0 0 10px">Clients</h3>
+                    <table>
+                        <thead><tr><th>Email</th><th>Name</th><th>Balance</th></tr></thead>
+                        <tbody id="clients-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ===================== EMPLOYEES ===================== -->
+            <div class="view" id="view-employees" hidden>
+                <div class="actions">
+                    <button id="btn-employees-refresh">List employees</button>
+                    <span class="muted">Employee-only: /employees/**</span>
+                </div>
+
+                <div class="grid cols2" style="margin-top:12px">
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Create employee</h3>
+                        <form id="form-employee-create" class="grid">
+                            <div><label>Email</label><input name="email" type="email" required placeholder="employee@mail.com" /></div>
+                            <div><label>Password</label><input name="password" type="text" required /></div>
+                            <div><label>Name</label><input name="name" type="text" required /></div>
+                            <div class="grid cols2">
+                                <div><label>Birth date</label><input name="birthDate" type="date" required /></div>
+                                <div><label>Phone</label><input name="phone" type="text" required placeholder="+995..." /></div>
+                            </div>
+                            <div class="actions"><button type="submit">Create</button></div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin:0 0 10px">Find / Update / Delete</h3>
+
+                        <form id="form-employee-get" class="grid" style="margin-bottom:10px">
+                            <div><label>Employee email</label><input name="email" type="email" required placeholder="employee@mail.com" /></div>
+                            <div class="actions"><button type="submit">Get employee</button></div>
+                        </form>
+
+                        <form id="form-employee-update" class="grid" style="margin-bottom:10px">
+                            <div><label>Path email (who to update)</label><input name="pathEmail" type="email" required placeholder="employee@mail.com" /></div>
+                            <div class="grid cols2">
+                                <div><label>New password</label><input name="password" type="text" required /></div>
+                                <div><label>New name</label><input name="name" type="text" required /></div>
+                            </div>
+                            <div class="grid cols2">
+                                <div><label>New birth date</label><input name="birthDate" type="date" required /></div>
+                                <div><label>New phone</label><input name="phone" type="text" required /></div>
+                            </div>
+                            <div class="actions"><button type="submit">Update</button></div>
+                        </form>
+
+                        <form id="form-employee-delete" class="grid">
+                            <div><label>Delete by email</label><input name="email" type="email" required placeholder="employee@mail.com" /></div>
+                            <div class="actions"><button type="submit" class="danger">Delete</button></div>
                         </form>
                     </div>
                 </div>
@@ -253,10 +323,10 @@
                 </div>
             </div>
 
-            <!-- ORDERS -->
+            <!-- ===================== ORDERS ===================== -->
             <div class="view" id="view-orders" hidden>
                 <div class="actions">
-                    <span class="muted">GET by client/employee + POST /orders:contentReference[oaicite:8]{index=8} (price is computed server-side):contentReference[oaicite:9]{index=9}</span>
+                    <span class="muted">GET by client/employee + POST /orders (price computed server-side)</span>
                 </div>
 
                 <div class="grid cols2" style="margin-top:12px">
@@ -264,31 +334,18 @@
                         <h3 style="margin:0 0 10px">Find orders</h3>
 
                         <form id="form-orders-by-client" class="grid" style="margin-bottom:10px">
-                            <div>
-                                <label>Client email</label>
-                                <input name="email" type="email" required placeholder="client@mail.com" />
-                            </div>
-                            <div class="actions"><button type="submit">Get by client</button></div>
+                            <div><label>Client email</label><input name="email" type="email" required placeholder="client@mail.com" /></div>
+                            <div class="actions"><button type="submit">Get my orders</button></div>
                         </form>
-                        <form id="form-order-delete" class="card">
-                            <h3>Delete order</h3>
-                            <div class="grid">
-                                <div>
-                                    <label>Order ID</label>
-                                    <input name="id" type="number" min="1" step="1" required placeholder="e.g. 1"/>
-                                </div>
-                                <div class="actions">
-                                    <button class="danger" type="submit">Delete</button>
-                                </div>
-                                <div class="muted">Employees only</div>
-                            </div>
+
+                        <form id="form-order-delete" class="grid" style="margin-bottom:10px">
+                            <div><label>Order ID</label><input name="id" type="number" min="1" step="1" required placeholder="e.g. 1"/></div>
+                            <div class="actions"><button class="danger" type="submit">Delete</button></div>
+                            <div class="muted">Employees only</div>
                         </form>
 
                         <form id="form-orders-by-employee" class="grid">
-                            <div>
-                                <label>Employee email</label>
-                                <input name="email" type="email" required placeholder="employee@mail.com" />
-                            </div>
+                            <div><label>Employee email</label><input name="email" type="email" required placeholder="employee@mail.com" /></div>
                             <div class="actions"><button type="submit">Get by employee</button></div>
                         </form>
                     </div>
@@ -297,18 +354,12 @@
                         <h3 style="margin:0 0 10px">Create order</h3>
                         <form id="form-order-create" class="grid">
                             <div class="grid cols2">
-                                <div>
-                                    <label>Client email</label>
-                                    <input name="clientEmail" type="email" required placeholder="client@mail.com" />
-                                </div>
-                                <div>
-                                    <label>Employee email</label>
-                                    <input name="employeeEmail" type="email" required placeholder="employee@mail.com" />
-                                </div>
+                                <div><label>Client email</label><input name="clientEmail" type="email" required placeholder="client@mail.com" /></div>
+                                <div><label>Employee email</label><input name="employeeEmail" type="email" required placeholder="employee@mail.com" /></div>
                             </div>
 
                             <div>
-                                <label>Order date (LocalDateTime)</label>
+                                <label>Order date</label>
                                 <input name="orderDate" type="datetime-local" required />
                                 <div class="muted">Sent as <code>YYYY-MM-DDTHH:mm:ss</code></div>
                             </div>
@@ -319,12 +370,10 @@
                                     <button type="button" id="btn-add-item">+ Add item</button>
                                 </div>
                                 <div id="items-wrap" class="grid" style="margin-top:10px"></div>
-                                <div class="muted">Book must exist (backend searches by bookName):contentReference[oaicite:10]{index=10}</div>
+                                <div class="muted">Book must exist (backend searches by bookName)</div>
                             </div>
 
-                            <div class="actions">
-                                <button type="submit">Create order</button>
-                            </div>
+                            <div class="actions"><button type="submit">Create order</button></div>
                         </form>
                     </div>
                 </div>
@@ -334,19 +383,34 @@
                     <pre id="orders-pre">[]</pre>
                 </div>
             </div>
+
         </section>
 
         <aside class="card">
             <div class="actions" style="justify-content:space-between">
                 <strong>Response</strong>
-                <button id="btn-clear">Clear</button>
+                <button id="btn-clear" type="button">Clear</button>
             </div>
             <pre id="out">Ready.</pre>
             <div class="muted" style="margin-top:10px">
-                If you get <code>401</code> or a login prompt, authenticate first (Spring Security).<br/>
-                If you get <code>403</code> on POST/PUT/DELETE, it’s usually CSRF (needs SecurityConfig change).
+                If you get <code>401</code>, login first.<br/>
+                If you get <code>403</code> on POST/PUT/DELETE/PATCH, it’s usually CSRF.
             </div>
         </aside>
+    </div>
+    <div id="confirm-modal" class="modal" hidden>
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-card">
+            <div id="confirm-text" class="modal-text">
+                Are you sure you want to delete your account?
+            </div>
+
+            <div class="actions">
+                <button id="confirm-cancel" type="button">Cancel</button>
+                <button id="confirm-ok" type="button" class="danger">Delete</button>
+            </div>
+        </div>
     </div>
 </main>
 

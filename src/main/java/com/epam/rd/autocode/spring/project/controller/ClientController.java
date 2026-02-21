@@ -39,4 +39,14 @@ public class ClientController {
     public void deleteClientByEmail(@PathVariable String email) {
         clientService.deleteClientByEmail(email);
     }
+
+    @PatchMapping("/{email:.+}/block")
+    public ClientDTO block(@PathVariable String email) {
+        return clientService.setClientBlocked(email, true);
+    }
+
+    @PatchMapping("/{email:.+}/unblock")
+    public ClientDTO unblock(@PathVariable String email) {
+        return clientService.setClientBlocked(email, false);
+    }
 }

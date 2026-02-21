@@ -89,6 +89,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/clients").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.PUT, "/clients/**").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.DELETE, "/clients/**").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.PATCH, "/clients/**").hasRole("EMPLOYEE")
 
                         // Everything else requires login
                         .anyRequest().authenticated()

@@ -34,6 +34,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             return User.withUsername(client.getEmail())
                     .password(client.getPassword())
                     .roles("CLIENT")
+                    .disabled(client.isBlocked())
                     .build();
         }
 

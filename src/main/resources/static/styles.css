@@ -62,6 +62,45 @@ pre {
     border-color: rgba(255,255,255,0.45);
     background: rgba(255,255,255,0.12);
 }
-[hidden] {
-    display: none !important;
+[hidden] { display: none !important; }
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 9999;
 }
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-card {
+    position: relative;
+    width: min(520px, calc(100vw - 24px));
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(10, 15, 22, 0.95);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.modal-text {
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+[hidden]{ display:none !important; }
+
+.modal{ position:fixed; inset:0; display:grid; place-items:center; z-index:9999; }
+.modal-backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.6); }
+.modal-card{
+    position:relative; width:min(520px, calc(100vw - 24px));
+    padding:16px; border-radius:14px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(10,15,22,.95);
+}
+.modal-text{ margin-bottom:12px; line-height:1.35; }

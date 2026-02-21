@@ -211,7 +211,40 @@ function applyUiAccess(roles) {
 const authBox = document.getElementById('auth-box');
 const btnLogin = document.getElementById('btn-login');
 const btnLogout = document.getElementById('btn-logout');
+const btnDeleteAccount = document.getElementById('btn-delete-account');
 
+const confirmModal = document.getElementById('confirm-modal');
+const confirmText = document.getElementById('confirm-text');
+const confirmOk = document.getElementById('confirm-ok');
+const confirmCancel = document.getElementById('confirm-cancel');
+
+let onConfirmOk = null;
+
+function openConfirm(message, okHandler) {
+    if (!confirmModal) return;
+
+    if (confirmText) confirmText.textContent = message;
+    onConfirmOk = okHandler;
+
+    confirmModal.hidden = false;
+}
+
+function closeConfirm() {
+    if (!confirmModal) return;
+    confirmModal.hidden = true;
+    onConfirmOk = null;
+}
+
+confirmCancel?.addEventListener('click', closeConfirm);
+confirmModal?.querySelector('.modal-backdrop')?.addEventListener('click', closeConfirm);
+
+confirmOk?.addEventListener('click', async () => {
+    try {
+        if (onConfirmOk) await onConfirmOk();
+    } finally {
+        closeConfirm();
+    }
+});
 function renderAuth(me) {
     if (!authBox || !btnLogin || !btnLogout) return;
 
@@ -219,12 +252,18 @@ function renderAuth(me) {
         authBox.textContent = t('auth_guest');
         btnLogin.style.display = '';
         btnLogout.style.display = 'none';
+        if (btnDeleteAccount) btnDeleteAccount.style.display = 'none';
         return;
     }
-    const roles = (me.roles || []).join(',');
-    authBox.textContent = `Auth: ${me.username} (${roles})`;
+
+    const rolesArr = me.roles || [];
+    const rolesText = rolesArr.join(',');
+    const isClient = rolesArr.includes('ROLE_CLIENT');
+
+    authBox.textContent = `Auth: ${me.username} (${rolesText})`;
     btnLogin.style.display = 'none';
     btnLogout.style.display = '';
+    if (btnDeleteAccount) btnDeleteAccount.style.display = isClient ? '' : 'none';
 }
 
 btnLogin?.addEventListener('click', () => window.location.href = '/login');
@@ -244,7 +283,17 @@ btnLogout?.addEventListener('click', async () => {
     url.pathname = '/index.html';
     window.location.replace(url.toString());
 });
+btnDeleteAccount?.addEventListener('click', () => {
+    openConfirm('Are you sure you want to delete your account?', async () => {
+        await ensureCsrf().catch(() => {});
+        await api('DELETE', '/profile');     // delete own client account
+        await api('POST', '/logout').catch(() => {});
 
+        const url = new URL(window.location.href);
+        url.pathname = '/index.html';
+        window.location.replace(url.toString());
+    });
+});
 // ---------- Orders UI rules ----------
 function applyOrdersUi(me) {
     const roles = me?.roles || [];

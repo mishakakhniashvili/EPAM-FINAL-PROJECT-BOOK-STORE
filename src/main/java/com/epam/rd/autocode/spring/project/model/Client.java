@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "CLIENTS")
 public class Client extends User {
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private boolean blocked = false;
     public Client() {
         super();
     }
@@ -21,4 +23,9 @@ public class Client extends User {
 
     public BigDecimal getBalance() { return balance; }
     public void setBalance(BigDecimal balance) { this.balance = balance; }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+    public void setBlocked(boolean blocked) { this.blocked = blocked; }
 }

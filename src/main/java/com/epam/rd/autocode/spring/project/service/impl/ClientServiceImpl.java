@@ -5,6 +5,7 @@ import com.epam.rd.autocode.spring.project.exception.AlreadyExistException;
 import com.epam.rd.autocode.spring.project.exception.NotFoundException;
 import com.epam.rd.autocode.spring.project.model.Client;
 import com.epam.rd.autocode.spring.project.repo.ClientRepository;
+import com.epam.rd.autocode.spring.project.repo.OrderRepository;
 import com.epam.rd.autocode.spring.project.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -19,6 +20,7 @@ import java.util.List;
 public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
     private final ModelMapper mapper;
+    private final OrderRepository orderRepository; //
     private final PasswordEncoder passwordEncoder;
 
     @Override
@@ -54,6 +56,7 @@ public class ClientServiceImpl implements ClientService {
     public void deleteClientByEmail(String email) {
         Client client = clientRepository.findByEmail(email)
                 .orElseThrow(() -> new NotFoundException("Client email not found: " + email));
+        orderRepository.deleteByClient_Email(email);
         clientRepository.delete(client);
     }
 
@@ -77,5 +80,16 @@ public class ClientServiceImpl implements ClientService {
             return password;
         }
         return passwordEncoder.encode(password);
+    }
+
+    @Transactional
+    @Override
+    public ClientDTO setClientBlocked(String email, boolean blocked) {
+        Client client = clientRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("Client not found: " + email));
+
+        client.setBlocked(blocked);
+        Client saved = clientRepository.save(client);
+        return mapper.map(saved, ClientDTO.class);
     }
 }
