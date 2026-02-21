@@ -8,16 +8,18 @@ import com.epam.rd.autocode.spring.project.repo.ClientRepository;
 import com.epam.rd.autocode.spring.project.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
     private final ModelMapper mapper;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<ClientDTO> getAllClients() {
@@ -37,9 +39,10 @@ public class ClientServiceImpl implements ClientService {
     public ClientDTO updateClientByEmail(String email, ClientDTO dto) {
         Client client = clientRepository.findByEmail(email)
                 .orElseThrow(() -> new NotFoundException("Client not found: " + email));
+
         client.setEmail(email);
         client.setName(dto.getName());
-        client.setPassword(dto.getPassword());
+        client.setPassword(encodeIfNeeded(dto.getPassword()));
         client.setBalance(dto.getBalance());
 
         Client saved = clientRepository.save(client);
@@ -54,15 +57,25 @@ public class ClientServiceImpl implements ClientService {
         clientRepository.delete(client);
     }
 
-
-    @Override
     @Transactional
+    @Override
     public ClientDTO addClient(ClientDTO dto) {
         if (clientRepository.existsByEmail(dto.getEmail())) {
             throw new AlreadyExistException("Client already exists:" + dto.getEmail());
         }
         Client client = mapper.map(dto, Client.class);
+        client.setPassword(encodeIfNeeded(dto.getPassword()));
         Client saved = clientRepository.save(client);
         return mapper.map(saved, ClientDTO.class);
+    }
+
+    private String encodeIfNeeded(String password) {
+        if (password == null) return null;
+
+        // Prevent double encoding if password is already bcrypt hash
+        if (password.startsWith("$2a$") || password.startsWith("$2b$") || password.startsWith("$2y$")) {
+            return password;
+        }
+        return passwordEncoder.encode(password);
     }
 }

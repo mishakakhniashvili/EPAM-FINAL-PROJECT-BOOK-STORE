@@ -21,21 +21,25 @@ public class GlobalExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
+    // ---------- 404 (no endpoint/resource) ----------
     @ExceptionHandler({NoHandlerFoundException.class, NoResourceFoundException.class})
     public ResponseEntity<Map<String, Object>> handleNotFound(Exception ex) {
         return build(HttpStatus.NOT_FOUND, "Not found");
     }
 
+    // ---------- 404 (business not found) ----------
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleNotFoundBusiness(NotFoundException ex) {
         return build(HttpStatus.NOT_FOUND, ex.getMessage());
     }
 
+    // ---------- 409 (already exists) ----------
     @ExceptionHandler(AlreadyExistException.class)
     public ResponseEntity<Map<String, Object>> handleAlreadyExists(AlreadyExistException ex) {
         return build(HttpStatus.CONFLICT, ex.getMessage());
     }
 
+    // ---------- 400 (bean validation) ----------
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidation(MethodArgumentNotValidException ex) {
         String msg = ex.getBindingResult()
@@ -46,11 +50,19 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.BAD_REQUEST, msg);
     }
 
+    // ---------- 400 (manual validation / illegal input) ----------
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalArgument(IllegalArgumentException ex) {
+        return build(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+
+    // ---------- 400 (bad JSON) ----------
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<Map<String, Object>> handleBadJson(HttpMessageNotReadableException ex) {
         return build(HttpStatus.BAD_REQUEST, "Malformed JSON or missing/invalid fields");
     }
 
+    // ---------- 500 (fallback) ----------
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleOther(Exception ex) {
         log.error("Unexpected error", ex);

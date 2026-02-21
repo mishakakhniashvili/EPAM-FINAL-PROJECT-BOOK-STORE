@@ -43,3 +43,25 @@ pre {
 .pill { display:inline-block; padding: 2px 8px; border-radius: 999px; background:#152031; border:1px solid #27364a; font-size: 12px; color:#a9b7c7; }
 .danger { border-color:#6b2b2b !important; }
 .ok { border-color:#2b6b3a !important; }
+.lang-switch {
+    display: inline-flex;
+    gap: 8px;
+    margin-left: 12px;
+}
+
+.lang-switch button {
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    color: inherit;
+    cursor: pointer;
+}
+
+.lang-switch button.active {
+    border-color: rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.12);
+}
+[hidden] {
+    display: none !important;
+}

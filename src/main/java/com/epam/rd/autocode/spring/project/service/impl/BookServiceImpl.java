@@ -10,7 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
-
+import com.epam.rd.autocode.spring.project.exception.AlreadyExistException;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -58,9 +58,16 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new NotFoundException("Book not found: " + name));
         bookRepository.delete(book);
     }
-    @Override@Transactional
-    public BookDTO addBook(BookDTO book) {
-        return null;
+    @Override
+    @Transactional
+    public BookDTO addBook(BookDTO dto) {
+        if (bookRepository.existsByName(dto.getName())) {
+            throw new AlreadyExistException("Book already exists: " + dto.getName());
+        }
+
+        Book entity = mapper.map(dto, Book.class);
+        Book saved = bookRepository.save(entity);
+        return mapper.map(saved, BookDTO.class);
     }
 
     @Override

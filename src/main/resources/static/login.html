@@ -1,0 +1,48 @@
+<!-- src/main/resources/static/login.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<main style="max-width:520px;margin:40px auto;">
+    <section class="card">
+        <h2 style="margin-top:0;">Login</h2>
+
+        <form method="post" action="/login" class="grid">
+            <div>
+                <label>Email</label>
+                <input name="username" type="email" required placeholder="client1@example.com"/>
+            </div>
+            <div>
+                <label>Password</label>
+                <input name="password" type="password" required/>
+            </div>
+            <div class="actions">
+                <button type="submit">Sign in</button>
+                <a class="muted" href="/index.html">Back</a>
+            </div>
+        </form>
+
+        <div class="muted" style="margin-top:10px;">
+            Use your email as username.
+        </div>
+    </section>
+</main>
+<script>
+    fetch('/csrf', { credentials: 'same-origin' })
+        .then(r => r.json())
+        .then(csrf => {
+            const form = document.querySelector('form');
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = csrf.parameterName; // usually "_csrf"
+            input.value = csrf.token;
+            form.appendChild(input);
+        });
+</script>
+</body>
+</html>

@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
     private final ModelMapper mapper;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<EmployeeDTO> getAllEmployees() {
@@ -41,7 +43,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (employeeRepository.existsByEmail(dto.getEmail())) {
             throw new AlreadyExistException("Employee already exists: " + dto.getEmail());
         }
+
         Employee employee = mapper.map(dto, Employee.class);
+        employee.setPassword(encodeIfNeeded(dto.getPassword()));
+
         Employee saved = employeeRepository.save(employee);
         return mapper.map(saved, EmployeeDTO.class);
     }
@@ -54,7 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         employee.setEmail(email);
         employee.setName(dto.getName());
-        employee.setPassword(dto.getPassword());
+        employee.setPassword(encodeIfNeeded(dto.getPassword()));
         employee.setBirthDate(dto.getBirthDate());
         employee.setPhone(dto.getPhone());
 
@@ -69,4 +74,12 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .orElseThrow(() -> new NotFoundException("Employee not found: " + email));
         employeeRepository.delete(employee);
     }
+    private String encodeIfNeeded(String password) {
+                if (password == null) return null;
+                if (password.startsWith("$2a$") || password.startsWith("$2b$") || password.startsWith("$2y$")) {
+                        return password;
+                    }
+                return passwordEncoder.encode(password);
+           }
+
 }
