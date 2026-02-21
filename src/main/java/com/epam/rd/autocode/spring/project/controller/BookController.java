@@ -38,4 +38,9 @@ public class BookController {
     public void deleteBook(@PathVariable String name) {
         bookService.deleteBookByName(name);
     }
+
+    @PatchMapping("/{name}")
+    public BookDTO patchBook(@PathVariable String name, @RequestBody BookDTO dto) {
+        return bookService.patchBookByName(name, dto);
+    }
 }

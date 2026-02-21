@@ -49,4 +49,9 @@ public class ClientController {
     public ClientDTO unblock(@PathVariable String email) {
         return clientService.setClientBlocked(email, false);
     }
+
+    @PatchMapping("/{email:.+}")
+    public ClientDTO patchClient(@PathVariable String email, @RequestBody ClientDTO dto) {
+        return clientService.patchClientByEmail(email, dto);
+    }
 }

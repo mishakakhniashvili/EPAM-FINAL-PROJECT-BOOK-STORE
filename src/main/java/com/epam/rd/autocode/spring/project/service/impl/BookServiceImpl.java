@@ -75,6 +75,24 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAll();
     }
 
+    @Transactional
+    @Override
+    public BookDTO patchBookByName(String name, BookDTO dto) {
+        Book book = bookRepository.findByName(name)
+                .orElseThrow(() -> new NotFoundException("Book not found: " + name));
 
+        if (dto.getName() != null && !dto.getName().isBlank()) book.setName(dto.getName());
+        if (dto.getAuthor() != null && !dto.getAuthor().isBlank()) book.setAuthor(dto.getAuthor());
+        if (dto.getGenre() != null && !dto.getGenre().isBlank()) book.setGenre(dto.getGenre());
+        if (dto.getPrice() != null) book.setPrice(dto.getPrice());
+        if (dto.getPublicationDate() != null) book.setPublicationDate(dto.getPublicationDate());
+        if (dto.getPages() != null) book.setPages(dto.getPages());
+        if (dto.getLanguage() != null) book.setLanguage(dto.getLanguage());
+        if (dto.getAgeGroup() != null) book.setAgeGroup(dto.getAgeGroup());
+        if (dto.getCharacteristics() != null && !dto.getCharacteristics().isBlank()) book.setCharacteristics(dto.getCharacteristics());
+        if (dto.getDescription() != null && !dto.getDescription().isBlank()) book.setDescription(dto.getDescription());
+
+        return mapper.map(bookRepository.save(book), BookDTO.class);
+    }
 
 }

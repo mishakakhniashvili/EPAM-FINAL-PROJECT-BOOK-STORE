@@ -92,4 +92,23 @@ public class ClientServiceImpl implements ClientService {
         Client saved = clientRepository.save(client);
         return mapper.map(saved, ClientDTO.class);
     }
+
+    @Transactional
+    @Override
+    public ClientDTO patchClientByEmail(String email, ClientDTO dto) {
+        Client client = clientRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("Client email not found: " + email));
+
+        if (dto.getPassword() != null && !dto.getPassword().isBlank()) {
+            client.setPassword(passwordEncoder.encode(dto.getPassword()));
+        }
+        if (dto.getName() != null && !dto.getName().isBlank()) {
+            client.setName(dto.getName());
+        }
+        if (dto.getBalance() != null) {
+            client.setBalance(dto.getBalance());
+        }
+
+        return mapper.map(clientRepository.save(client), ClientDTO.class);
+    }
 }

@@ -104,3 +104,40 @@ pre {
     background:rgba(10,15,22,.95);
 }
 .modal-text{ margin-bottom:12px; line-height:1.35; }
+.modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-card {
+    position: relative;
+    width: min(680px, calc(100vw - 24px));
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(10, 15, 22, 0.97);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.55);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.modal-body { display: grid; gap: 10px; }
+
+.kv { display: grid; gap: 6px; }
+.kv .k { color:#a9b7c7; font-size: 12px; }
+.kv .v { white-space: pre-wrap; }

@@ -15,4 +15,8 @@ public interface EmployeeService {
     void deleteEmployeeByEmail(String email);
 
     EmployeeDTO addEmployee(EmployeeDTO employee);
+
+    EmployeeDTO patchEmployeeByEmail(String email, EmployeeDTO dto);
+
+
 }

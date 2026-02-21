@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 @Configuration
 public class SecurityConfig {
 
@@ -33,7 +33,7 @@ public class SecurityConfig {
 
                 // ---------- Authorization rules ----------
                 .authorizeHttpRequests(auth -> auth
-
+                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         // Public static pages + login page
                         .requestMatchers("/", "/index.html", "/app.js", "/styles.css", "/login", "/login.html").permitAll()
 
@@ -50,7 +50,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/books/**").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.PUT, "/books/**").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.DELETE, "/books/**").hasRole("EMPLOYEE")
-
+                        .requestMatchers(HttpMethod.PATCH, "/books/**").hasRole("EMPLOYEE")
                         // ---------- CLIENT REGISTRATION ----------
                         // Allow creating a new client account
                         .requestMatchers(HttpMethod.POST, "/clients").permitAll()
@@ -77,12 +77,13 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/profile/employee").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.DELETE, "/profile").hasRole("CLIENT")
                         // Only clients can update/delete their own account (matches project requirements)
-                            .requestMatchers(HttpMethod.PUT, "/profile").hasRole("CLIENT")
-                                .requestMatchers(HttpMethod.DELETE, "/profile").hasRole("CLIENT")
+                        .requestMatchers(HttpMethod.PUT, "/profile").hasRole("CLIENT")
+                        .requestMatchers(HttpMethod.DELETE, "/profile").hasRole("CLIENT")
 
 
                         // ---------- EMPLOYEES MANAGEMENT ----------
                         .requestMatchers("/employees/**").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.PATCH, "/employees/**").hasRole("EMPLOYEE")
 
                         // ---------- CLIENTS MANAGEMENT (admin/employee-only) ----------
                         .requestMatchers(HttpMethod.GET, "/clients/**").hasRole("EMPLOYEE")
@@ -90,7 +91,6 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/clients/**").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.DELETE, "/clients/**").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.PATCH, "/clients/**").hasRole("EMPLOYEE")
-
                         // Everything else requires login
                         .anyRequest().authenticated()
                 )

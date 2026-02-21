@@ -39,4 +39,9 @@ public class EmployeeController {
     public void deleteEmployeeByEmail(@PathVariable String email) {
         employeeService.deleteEmployeeByEmail(email);
     }
+
+    @PatchMapping("/{email:.+}")
+    public EmployeeDTO patchEmployee(@PathVariable String email, @RequestBody EmployeeDTO dto) {
+        return employeeService.patchEmployeeByEmail(email, dto);
+    }
 }

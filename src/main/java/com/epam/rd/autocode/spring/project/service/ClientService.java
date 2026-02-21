@@ -17,4 +17,6 @@ public interface ClientService {
     ClientDTO addClient(ClientDTO client);
 
     ClientDTO setClientBlocked(String email, boolean blocked);
+
+    ClientDTO patchClientByEmail(String email, ClientDTO dto);
 }

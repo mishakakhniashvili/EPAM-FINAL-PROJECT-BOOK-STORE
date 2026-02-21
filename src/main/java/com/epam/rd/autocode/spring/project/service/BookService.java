@@ -18,4 +18,6 @@ public interface BookService {
     BookDTO addBook(BookDTO book);
 
     List<Book> getAll();
+
+    BookDTO patchBookByName(String name, BookDTO dto);
 }

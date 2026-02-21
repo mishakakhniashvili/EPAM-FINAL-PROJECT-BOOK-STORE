@@ -82,4 +82,28 @@ public class EmployeeServiceImpl implements EmployeeService {
                 return passwordEncoder.encode(password);
            }
 
+
+    @Transactional
+    @Override
+    public EmployeeDTO patchEmployeeByEmail(String email, EmployeeDTO dto) {
+        Employee emp = employeeRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("Employee email not found: " + email));
+
+        if (dto.getPassword() != null && !dto.getPassword().isBlank()) {
+            emp.setPassword(passwordEncoder.encode(dto.getPassword()));
+        }
+        if (dto.getName() != null && !dto.getName().isBlank()) {
+            emp.setName(dto.getName());
+        }
+        if (dto.getBirthDate() != null) {
+            emp.setBirthDate(dto.getBirthDate());
+        }
+        if (dto.getPhone() != null && !dto.getPhone().isBlank()) {
+            emp.setPhone(dto.getPhone());
+        }
+
+        return mapper.map(employeeRepository.save(emp), EmployeeDTO.class);
+    }
+
+
 }
