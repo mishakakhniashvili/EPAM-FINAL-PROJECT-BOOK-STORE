@@ -1,9 +1,3 @@
--- Idempotent seed data (safe to run on every start)
--- Uses MERGE KEY(...) so it won't crash on duplicates.
-
--- =========================
--- EMPLOYEES
--- =========================
 MERGE INTO EMPLOYEES (BIRTH_DATE, EMAIL, NAME, PASSWORD, PHONE)
     KEY (EMAIL)
     VALUES ('1990-05-15', 'john.doe@email.com', 'John Doe', '$2a$10$SUcpxb5iEc6nAZdN/QId4e3z5btFGzUNMec8dBjvPqn7VQcIUSgU6', '555-123-4567');
