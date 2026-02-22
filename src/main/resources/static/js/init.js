@@ -4,8 +4,7 @@
     document.getElementById('lang-en')?.addEventListener('click', () => setLangAndReload('en'));
     document.getElementById('lang-ka')?.addEventListener('click', () => setLangAndReload('ka'));
 
-    addItemRow('', 1);
-
+    if (typeof addItemRow === 'function') addItemRow('', 1);
     // preload CSRF (so first POST works immediately)
     ensureCsrf().catch(() => {});
 

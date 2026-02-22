@@ -255,3 +255,26 @@ pre{
 @media (max-width: 520px){
     .kv{ grid-template-columns: 1fr; }
 }
+
+/* --- Header layout: keep tabs on their own row --- */
+header .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+header .row nav {
+    flex: 0 0 100%;   /* full width -> goes to next line */
+    order: 99;        /* place after other header items */
+    margin-top: 10px;
+}
+
+
+
+/* Auth / lang / pills bigger */
+header .pill,
+header .lang-switch button {
+    font-size: 15px;
+    padding: 8px 14px;
+}

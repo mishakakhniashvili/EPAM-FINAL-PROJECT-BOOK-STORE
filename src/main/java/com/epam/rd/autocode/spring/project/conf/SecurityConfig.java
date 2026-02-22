@@ -66,7 +66,7 @@ public class SecurityConfig {
                         // Employee: view orders assigned to employee
                         .requestMatchers(HttpMethod.GET, "/orders/by_employee/**").hasRole("EMPLOYEE")
                         // Employee: delete orders
-                        .requestMatchers(HttpMethod.DELETE, "/orders/**").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.DELETE, "/orders/**").hasAnyRole("EMPLOYEE","CLIENT")
 
                         // ---------- "Who am I" ----------
                         .requestMatchers(HttpMethod.GET, "/me").authenticated()
@@ -100,7 +100,9 @@ public class SecurityConfig {
 
                 // ---------- Form login ----------
                 .formLogin(form -> form
-                        .loginPage("/login")
+                        .loginPage("/login.html")
+                        .loginProcessingUrl("/login")
+                        .failureUrl("/login.html?error")
                         .defaultSuccessUrl("/index.html", true)
                         .permitAll()
                 )

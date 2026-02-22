@@ -172,7 +172,6 @@ function t(key, vars = {}) {
 function applyI18n() {
     LANG = getLang();
     document.documentElement.lang = LANG;
-
     // text nodes by data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');

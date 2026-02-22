@@ -9,29 +9,31 @@
 
 <body>
 <header>
-    <h1>Book Store – Simple UI</h1>
-
     <div class="row">
+        <h1 data-i18n="title">Book Store — Simple UI</h1>
+
         <nav>
-            <button class="tab active" data-view="books">Books</button>
-            <button class="tab" data-view="clients">Clients</button>
-            <button class="tab" data-view="employees">Employees</button>
-            <button class="tab" data-view="orders">Orders</button>
+            <button class="tab active" data-view="books" data-i18n="tab_books">Books</button>
+
+            <!-- Hide by default; JS will show after /me -->
+            <button class="tab" data-view="clients" data-i18n="tab_clients" style="display:none;">Clients</button>
+            <button class="tab" data-view="employees" data-i18n="tab_employees" style="display:none;">Employees</button>
+            <button class="tab" data-view="orders" data-i18n="tab_orders" style="display:none;">Orders</button>
         </nav>
 
-        <span class="pill">API: same origin</span>
-        <span class="muted">Tip: <a href="/h2-console" target="_blank" rel="noreferrer">H2 Console</a></span>
+
 
         <div class="lang-switch">
-            <button id="lang-en" type="button">EN</button>
-            <button id="lang-ka" type="button">KA</button>
+            <button id="lang-en" class="active">EN</button>
+            <button id="lang-ka">KA</button>
         </div>
 
         <span id="auth-box" class="pill">Auth: guest</span>
-        <a class="btn" href="/login">Login</a>
-        <button id="btn-login" style="display:none">Login</button>
-        <button id="btn-logout" style="display:none">Logout</button>
-        <button id="btn-delete-account" class="danger" style="display:none">Delete my account</button>
+
+        <!-- These are controlled by auth.js -->
+        <button id="btn-login" class="pill" style="display:none;">Login</button>
+        <button id="btn-logout" class="pill" style="display:none;">Logout</button>
+        <button id="btn-delete-account" class="pill danger" style="display:none;">Delete my account</button>
     </div>
 </header>
 
@@ -438,7 +440,7 @@
 <script src="js/i18n.js"></script>
 <script src="js/books.js"></script>
 <script src="js/admin.js"></script>
-<script src="../orders.js"></script>
+<script src="js/orders.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/init.js"></script>
 </body>

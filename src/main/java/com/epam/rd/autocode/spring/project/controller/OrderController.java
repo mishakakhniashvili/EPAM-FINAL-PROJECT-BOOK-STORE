@@ -85,14 +85,27 @@ public class OrderController {
         return orderService.addOrder(dto);
     }
 
-
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteOrder(@PathVariable Long id) {
-        if (!orderRepository.existsById(id)) {
-            throw new NotFoundException("Order not found: " + id);
+    public void deleteOrder(@PathVariable Long id, Authentication auth) {
+
+        var order = orderRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Order not found: " + id));
+
+        boolean isEmployee = auth.getAuthorities().stream().anyMatch(a -> "ROLE_EMPLOYEE".equals(a.getAuthority()));
+        boolean isClient   = auth.getAuthorities().stream().anyMatch(a -> "ROLE_CLIENT".equals(a.getAuthority()));
+
+        if (isClient) {
+            // adjust this line if your Order model field names differ
+            String ownerEmail = order.getClient().getEmail();
+            if (!auth.getName().equalsIgnoreCase(ownerEmail)) {
+                throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Clients can delete only their own orders");
+            }
+        } else if (!isEmployee) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
-        orderRepository.deleteById(id);
+
+        orderRepository.delete(order);
     }
 }
 
