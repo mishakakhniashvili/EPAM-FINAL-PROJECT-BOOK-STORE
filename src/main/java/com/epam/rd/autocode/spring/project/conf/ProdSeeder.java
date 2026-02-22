@@ -3,6 +3,8 @@ package com.epam.rd.autocode.spring.project.conf;
 import com.epam.rd.autocode.spring.project.model.Book;
 import com.epam.rd.autocode.spring.project.model.Client;
 import com.epam.rd.autocode.spring.project.model.Employee;
+import com.epam.rd.autocode.spring.project.model.enums.AgeGroup;
+import com.epam.rd.autocode.spring.project.model.enums.Language;
 import com.epam.rd.autocode.spring.project.repo.BookRepository;
 import com.epam.rd.autocode.spring.project.repo.ClientRepository;
 import com.epam.rd.autocode.spring.project.repo.EmployeeRepository;
@@ -119,6 +121,24 @@ public class ProdSeeder implements ApplicationRunner {
                         "Passionate love affair", "A romance that sweeps you off your feet", "ENGLISH")
         );
 
+        for (BookSeed s : demo) {
+            // If your BookRepository uses name as @Id:
+            if (!bookRepository.existsByName(s.name)) {
+                Book b = new Book();
+                b.setName(s.name);
+                b.setGenre(s.genre);
+                b.setAgeGroup(AgeGroup.valueOf(s.ageGroup));
+                b.setPrice(new BigDecimal(s.price));
+                b.setPublicationDate(LocalDate.parse(s.publicationDate));
+                b.setAuthor(s.author);
+                b.setPages(s.pages);
+                b.setCharacteristics(s.characteristics);
+                b.setDescription(s.description);
+                b.setLanguage(Language.valueOf(s.language));
+
+                bookRepository.save(b);
+            }
+        }
     }
 
     private record EmployeeSeed(String email, String name, LocalDate birthDate, String phone) {}
