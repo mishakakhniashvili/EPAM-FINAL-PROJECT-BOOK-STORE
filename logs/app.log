@@ -466,3 +466,927 @@
 2026-02-22 03:27:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-02-22 03:27:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-02-22 03:27:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 03:34:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 03:34:02 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 42992 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 03:34:02 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 03:34:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 03:34:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 4 JPA repository interfaces.
+2026-02-22 03:34:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 03:34:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 03:34:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 03:34:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 03:34:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 03:34:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 530 ms
+2026-02-22 03:34:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 03:34:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 03:34:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 03:34:03 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 03:34:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 03:34:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 03:34:03 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 03:34:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 03:34:03 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 03:34:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 03:34:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 03:34:04 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 03:34:04 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 03:34:04 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 03:34:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30f929ff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49d4a2cf, org.springframework.security.web.context.SecurityContextHolderFilter@54ebacdc, org.springframework.security.web.header.HeaderWriterFilter@1bb5dce0, org.springframework.web.filter.CorsFilter@fed510f, org.springframework.security.web.csrf.CsrfFilter@45bb5862, org.springframework.security.web.authentication.logout.LogoutFilter@4606e1a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@45e931a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7aa06fac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d7d72f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ad49704, org.springframework.security.web.access.ExceptionTranslationFilter@2796716d, org.springframework.security.web.access.intercept.AuthorizationFilter@238fcafa]
+2026-02-22 03:34:04 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 03:34:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 03:34:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 03:34:04 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.094 seconds (process running for 2.377)
+2026-02-22 03:35:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 03:35:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 03:35:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 03:41:16 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 03:41:16 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - Starting BookStoreServiceSolutionApplicationTests using Java 17.0.18 with PID 45756 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 03:41:16 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 03:41:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 03:41:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 4 JPA repository interfaces.
+2026-02-22 03:41:17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 03:41:17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 03:41:17 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 03:41:17 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 03:41:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 03:41:17 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bookdb user=SA
+2026-02-22 03:41:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 03:41:18 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 03:41:18 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 03:41:18 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 03:41:18 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 03:41:18 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 03:41:19 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a4d34b2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e1201dd, org.springframework.security.web.context.SecurityContextHolderFilter@1bb59da3, org.springframework.security.web.header.HeaderWriterFilter@1e4d3c2e, org.springframework.web.filter.CorsFilter@353ab9e5, org.springframework.security.web.csrf.CsrfFilter@4e850e68, org.springframework.security.web.authentication.logout.LogoutFilter@7e1321fd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38d583cd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b29f03e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d891373, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46aaf47c, org.springframework.security.web.access.ExceptionTranslationFilter@6d2fe236, org.springframework.security.web.access.intercept.AuthorizationFilter@65c6a7a]
+2026-02-22 03:41:19 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 03:41:19 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bookdb'
+2026-02-22 03:41:19 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - Started BookStoreServiceSolutionApplicationTests in 2.495 seconds (process running for 4.03)
+2026-02-22 03:41:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 03:41:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 03:41:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 03:57:14 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 03:57:14 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - Starting BookStoreServiceSolutionApplicationTests using Java 17.0.18 with PID 43512 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 03:57:14 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 03:57:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 03:57:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 4 JPA repository interfaces.
+2026-02-22 03:57:14 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 03:57:14 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 03:57:14 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 03:57:14 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 03:57:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 03:57:15 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bookdb user=SA
+2026-02-22 03:57:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 03:57:15 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 03:57:15 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 03:57:15 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 03:57:16 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 03:57:16 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 03:57:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@346e62d7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59d64b60, org.springframework.security.web.context.SecurityContextHolderFilter@38d583cd, org.springframework.security.web.header.HeaderWriterFilter@4d5bfb1a, org.springframework.web.filter.CorsFilter@60e72ced, org.springframework.security.web.csrf.CsrfFilter@1925be93, org.springframework.security.web.authentication.logout.LogoutFilter@5c1d1aa6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7203fac0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fa78886, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a4d34b2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d376f28, org.springframework.security.web.access.ExceptionTranslationFilter@a93641e, org.springframework.security.web.access.intercept.AuthorizationFilter@38b7b02f]
+2026-02-22 03:57:16 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 03:57:16 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bookdb'
+2026-02-22 03:57:16 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - Started BookStoreServiceSolutionApplicationTests in 2.52 seconds (process running for 4.158)
+2026-02-22 03:57:16 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 03:57:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 03:57:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:10:29 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:10:29 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - Starting BookStoreServiceSolutionApplicationTests using Java 17.0.18 with PID 38480 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:10:29 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:10:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:10:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:10:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:10:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:10:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:10:29 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:10:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:10:30 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bookdb user=SA
+2026-02-22 04:10:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:10:30 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:10:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:10:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:10:31 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:10:31 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:10:31 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@26420ed1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5df744d4, org.springframework.security.web.context.SecurityContextHolderFilter@24945f50, org.springframework.security.web.header.HeaderWriterFilter@56e4f071, org.springframework.web.filter.CorsFilter@6dbf203c, org.springframework.security.web.csrf.CsrfFilter@3e1201dd, org.springframework.security.web.authentication.logout.LogoutFilter@7a5151d7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@180c785d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6de4e34a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79bc29aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@486bd746, org.springframework.security.web.access.ExceptionTranslationFilter@39506f12, org.springframework.security.web.access.intercept.AuthorizationFilter@bb510b]
+2026-02-22 04:10:31 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:10:31 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bookdb'
+2026-02-22 04:10:31 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplicationTests - Started BookStoreServiceSolutionApplicationTests in 2.596 seconds (process running for 4.127)
+2026-02-22 04:10:31 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:10:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:10:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:10:33 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:10:33 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 27160 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:10:33 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 04:10:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:10:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:10:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 04:10:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:10:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 04:10:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 04:10:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 04:10:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 584 ms
+2026-02-22 04:10:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:10:34 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 04:10:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:10:34 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 04:10:34 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:10:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:10:34 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:10:34 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:10:34 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 04:10:35 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:10:35 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:10:35 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:10:35 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:10:35 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:10:35 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7c1f435a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@123e87cd, org.springframework.security.web.context.SecurityContextHolderFilter@47bcaf67, org.springframework.security.web.header.HeaderWriterFilter@6b6dce39, org.springframework.web.filter.CorsFilter@21d85933, org.springframework.security.web.csrf.CsrfFilter@3b93d874, org.springframework.security.web.authentication.logout.LogoutFilter@199dee18, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@54cb2cee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@524032f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f33123, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@250c5892, org.springframework.security.web.access.ExceptionTranslationFilter@23d16a81, org.springframework.security.web.access.intercept.AuthorizationFilter@6508e82]
+2026-02-22 04:10:35 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:10:35 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:10:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 04:10:35 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.19 seconds (process running for 2.462)
+2026-02-22 04:10:44 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-22 04:10:44 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-22 04:10:44 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:12:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:12:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:12:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:12:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:12:59 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 41372 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:12:59 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 04:12:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:12:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:13:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 04:13:00 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:13:00 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 04:13:00 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 04:13:00 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 04:13:00 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 659 ms
+2026-02-22 04:13:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:13:00 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 04:13:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:13:00 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 04:13:00 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:13:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:13:00 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:13:00 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:13:00 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 04:13:00 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:13:01 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:13:01 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:13:01 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:13:01 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:13:01 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4606e1a6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69a8617c, org.springframework.security.web.context.SecurityContextHolderFilter@4cc070c2, org.springframework.security.web.header.HeaderWriterFilter@45bb5862, org.springframework.web.filter.CorsFilter@6ad703cd, org.springframework.security.web.csrf.CsrfFilter@7e84be9b, org.springframework.security.web.authentication.logout.LogoutFilter@3479b4cd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@426d7d23, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60c8cc46, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55d607b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d237827, org.springframework.security.web.access.ExceptionTranslationFilter@5b1295c0, org.springframework.security.web.access.intercept.AuthorizationFilter@7a62e096]
+2026-02-22 04:13:01 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:13:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:13:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 04:13:01 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.32 seconds (process running for 2.609)
+2026-02-22 04:13:01 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-22 04:13:01 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-22 04:13:01 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:15:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:15:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:15:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:15:18 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:15:18 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 1756 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:15:18 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 04:15:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:15:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:15:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 04:15:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:15:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 04:15:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 04:15:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 04:15:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 554 ms
+2026-02-22 04:15:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:15:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 04:15:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:15:19 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 04:15:19 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:15:19 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:15:19 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:15:19 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:15:19 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 04:15:19 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:15:19 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:15:19 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:15:20 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:15:20 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:15:20 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30f929ff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49d4a2cf, org.springframework.security.web.context.SecurityContextHolderFilter@54ebacdc, org.springframework.security.web.header.HeaderWriterFilter@1bb5dce0, org.springframework.web.filter.CorsFilter@fed510f, org.springframework.security.web.csrf.CsrfFilter@45bb5862, org.springframework.security.web.authentication.logout.LogoutFilter@4606e1a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@45e931a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7aa06fac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d7d72f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ad49704, org.springframework.security.web.access.ExceptionTranslationFilter@2796716d, org.springframework.security.web.access.intercept.AuthorizationFilter@238fcafa]
+2026-02-22 04:15:20 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:15:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:15:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 04:15:20 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.161 seconds (process running for 2.441)
+2026-02-22 04:15:20 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-22 04:15:20 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-22 04:15:20 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:17:07 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:17:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:17:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:17:08 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:17:08 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 43320 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:17:08 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 04:17:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:17:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:17:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 04:17:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:17:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 04:17:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 04:17:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 04:17:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 564 ms
+2026-02-22 04:17:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:17:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 04:17:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:17:09 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 04:17:09 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:17:09 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:17:09 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:17:09 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:17:09 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 04:17:10 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:17:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:17:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:17:10 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:17:10 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:17:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6ad703cd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d237827, org.springframework.security.web.context.SecurityContextHolderFilter@60c8cc46, org.springframework.security.web.header.HeaderWriterFilter@5a77e0e4, org.springframework.web.filter.CorsFilter@2c59b9f4, org.springframework.security.web.csrf.CsrfFilter@41ebae0e, org.springframework.security.web.authentication.logout.LogoutFilter@4d92e9da, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a03b87, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a544672, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23d16a81, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6508e82, org.springframework.security.web.access.ExceptionTranslationFilter@45bb5862, org.springframework.security.web.access.intercept.AuthorizationFilter@478d1193]
+2026-02-22 04:17:10 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:17:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:17:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 04:17:10 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.194 seconds (process running for 2.478)
+2026-02-22 04:17:11 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-22 04:17:11 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-22 04:17:11 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:18:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:18:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:18:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:18:52 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:18:52 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 34796 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:18:52 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 04:18:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:18:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:18:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 04:18:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:18:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 04:18:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 04:18:53 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 04:18:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 616 ms
+2026-02-22 04:18:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:18:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 04:18:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:18:53 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 04:18:53 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:18:53 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:18:53 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:18:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:18:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 04:18:54 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:18:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:18:54 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:18:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:18:54 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:18:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@fed510f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ad49704, org.springframework.security.web.context.SecurityContextHolderFilter@7aa06fac, org.springframework.security.web.header.HeaderWriterFilter@135a8812, org.springframework.web.filter.CorsFilter@431bf770, org.springframework.security.web.csrf.CsrfFilter@5a77e0e4, org.springframework.security.web.authentication.logout.LogoutFilter@6ad703cd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6114ed6f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3479b4cd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34b63def, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fb5e706, org.springframework.security.web.access.ExceptionTranslationFilter@1bb5dce0, org.springframework.security.web.access.intercept.AuthorizationFilter@269bf9e6]
+2026-02-22 04:18:54 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:18:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:18:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 04:18:54 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.254 seconds (process running for 2.547)
+2026-02-22 04:18:55 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-22 04:18:55 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-22 04:18:55 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:21:27 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:21:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:21:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:21:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:21:29 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Starting BookStoreServiceSolutionApplication using Java 17.0.18 with PID 23880 (C:\Users\misha\Desktop\book-store-service-task\target\classes started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:21:29 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - The following 1 profile is active: "dev"
+2026-02-22 04:21:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-22 04:21:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 4 JPA repository interfaces.
+2026-02-22 04:21:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-02-22 04:21:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:21:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-22 04:21:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-22 04:21:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-22 04:21:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 560 ms
+2026-02-22 04:21:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-22 04:21:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/bookdb user=SA
+2026-02-22 04:21:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-22 04:21:29 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/bookdb'
+2026-02-22 04:21:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-22 04:21:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-22 04:21:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-22 04:21:29 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-22 04:21:29 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-22 04:21:30 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-22 04:21:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:21:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-22 04:21:30 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-22 04:21:30 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:21:30 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6114ed6f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c1133ad, org.springframework.security.web.context.SecurityContextHolderFilter@7d39c9c, org.springframework.security.web.header.HeaderWriterFilter@2796716d, org.springframework.web.filter.CorsFilter@30f929ff, org.springframework.security.web.csrf.CsrfFilter@5b1295c0, org.springframework.security.web.authentication.logout.LogoutFilter@2a03b87, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@250c5892, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54ebacdc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@618c387d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49d4a2cf, org.springframework.security.web.access.ExceptionTranslationFilter@524032f9, org.springframework.security.web.access.intercept.AuthorizationFilter@21d85933]
+2026-02-22 04:21:30 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:21:30 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-02-22 04:21:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path ''
+2026-02-22 04:21:30 [main] INFO  c.e.r.a.s.p.BookStoreServiceSolutionApplication - Started BookStoreServiceSolutionApplication in 2.198 seconds (process running for 2.599)
+2026-02-22 04:21:31 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-22 04:21:31 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-22 04:21:31 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:25:11 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-22 04:25:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-22 04:25:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-22 04:38:14 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:38:14 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Starting BookControllerWebMvcTest using Java 17.0.18 with PID 19724 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:38:14 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:38:15 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 8c031bce-7d6d-4df2-9022-c850fd318c96
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:38:15 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:38:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7c3c453b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b791dca, org.springframework.security.web.context.SecurityContextHolderFilter@2a7ebe07, org.springframework.security.web.header.HeaderWriterFilter@e795a1d, org.springframework.web.filter.CorsFilter@15ac02d5, org.springframework.security.web.csrf.CsrfFilter@3b021664, org.springframework.security.web.authentication.logout.LogoutFilter@3ac0a14b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@29090809, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5eeee124, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62cd562d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2af9a5ef, org.springframework.security.web.access.ExceptionTranslationFilter@3d033453, org.springframework.security.web.access.intercept.AuthorizationFilter@619c3546]
+2026-02-22 04:38:15 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:38:16 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Started BookControllerWebMvcTest in 1.43 seconds (process running for 2.074)
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Starting ClientControllerWebMvcTest using Java 17.0.18 with PID 19724 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:38:16 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fb33df97-d100-4116-a7b3-a0c24ef4fd00
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:38:16 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:38:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6669cba, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37c74e4e, org.springframework.security.web.context.SecurityContextHolderFilter@1071ae7c, org.springframework.security.web.header.HeaderWriterFilter@13f2d42c, org.springframework.web.filter.CorsFilter@128a188a, org.springframework.security.web.csrf.CsrfFilter@460b77d6, org.springframework.security.web.authentication.logout.LogoutFilter@4a6ef712, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b8d2abe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@dd9de63, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52a75c12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@400008bf, org.springframework.security.web.access.ExceptionTranslationFilter@6cb662e8, org.springframework.security.web.access.intercept.AuthorizationFilter@61288814]
+2026-02-22 04:38:16 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:38:16 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Started ClientControllerWebMvcTest in 0.193 seconds (process running for 2.448)
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Starting EmployeeControllerWebMvcTest using Java 17.0.18 with PID 19724 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:38:16 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 59ac1764-79bf-4a84-a2cd-0395a331645d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:38:16 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:38:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62e99458, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1eddca25, org.springframework.security.web.context.SecurityContextHolderFilter@5342032a, org.springframework.security.web.header.HeaderWriterFilter@5ba36c83, org.springframework.web.filter.CorsFilter@22f057b4, org.springframework.security.web.csrf.CsrfFilter@1e3dc24f, org.springframework.security.web.authentication.logout.LogoutFilter@59aa1d1c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ba226cd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@239d9cb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a35ae82, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@581e8969, org.springframework.security.web.access.ExceptionTranslationFilter@3ea8ff31, org.springframework.security.web.access.intercept.AuthorizationFilter@612bb755]
+2026-02-22 04:38:16 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:38:16 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Started EmployeeControllerWebMvcTest in 0.182 seconds (process running for 2.691)
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Starting MeControllerWebMvcTest using Java 17.0.18 with PID 19724 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:38:16 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 69972fe3-387a-4929-9dfc-d489a26e1a57
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:38:16 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:38:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64fba3e6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58d79479, org.springframework.security.web.context.SecurityContextHolderFilter@da11873, org.springframework.security.web.header.HeaderWriterFilter@10508ba6, org.springframework.web.filter.CorsFilter@102c24d1, org.springframework.security.web.csrf.CsrfFilter@24520a51, org.springframework.security.web.authentication.logout.LogoutFilter@46d51d5e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@aaa7000, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39159b14, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57ab4b33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@495f7ca4, org.springframework.security.web.access.ExceptionTranslationFilter@2ae88712, org.springframework.security.web.access.intercept.AuthorizationFilter@5e72c82a]
+2026-02-22 04:38:16 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:38:16 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:38:16 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:38:16 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Started MeControllerWebMvcTest in 0.117 seconds (process running for 2.833)
+2026-02-22 04:39:34 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:39:34 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Starting BookControllerWebMvcTest using Java 17.0.18 with PID 42224 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:39:34 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:39:35 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 8fee0421-9afc-412b-8cc7-16a6970d76b8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:39:35 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:39:36 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33ebe4f0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37cfda1c, org.springframework.security.web.context.SecurityContextHolderFilter@16b64a03, org.springframework.security.web.header.HeaderWriterFilter@53ba1175, org.springframework.web.filter.CorsFilter@29147c12, org.springframework.security.web.csrf.CsrfFilter@55fb36de, org.springframework.security.web.authentication.logout.LogoutFilter@18dd7767, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b665a30, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3688baab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fe2dd02, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f45bc8e, org.springframework.security.web.access.ExceptionTranslationFilter@374b6e33, org.springframework.security.web.access.intercept.AuthorizationFilter@844e66d]
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:39:36 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Started BookControllerWebMvcTest in 1.418 seconds (process running for 2.01)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Starting ClientControllerWebMvcTest using Java 17.0.18 with PID 42224 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ae37398c-8e90-4285-8a36-c5a09252a314
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:39:36 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:39:36 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f521c69, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b3abeeb, org.springframework.security.web.context.SecurityContextHolderFilter@25110bb9, org.springframework.security.web.header.HeaderWriterFilter@18b45500, org.springframework.web.filter.CorsFilter@3aeb267, org.springframework.security.web.csrf.CsrfFilter@787a0fd6, org.springframework.security.web.authentication.logout.LogoutFilter@568ef502, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e55d844, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@dbda472, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41492479, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13a9cdae, org.springframework.security.web.access.ExceptionTranslationFilter@48b09105, org.springframework.security.web.access.intercept.AuthorizationFilter@3e12c5de]
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:39:36 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Started ClientControllerWebMvcTest in 0.151 seconds (process running for 2.339)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Starting EmployeeControllerWebMvcTest using Java 17.0.18 with PID 42224 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9ca6b00c-77f2-45b5-8af5-b11231b7cd22
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:39:36 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:39:36 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f65e0c0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@566cc6af, org.springframework.security.web.context.SecurityContextHolderFilter@3aa1c45, org.springframework.security.web.header.HeaderWriterFilter@35f6f105, org.springframework.web.filter.CorsFilter@d70dbeb, org.springframework.security.web.csrf.CsrfFilter@6fad5ace, org.springframework.security.web.authentication.logout.LogoutFilter@47f39279, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4deca78, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d45dd4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1614499b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f8f5d37, org.springframework.security.web.access.ExceptionTranslationFilter@632dc41, org.springframework.security.web.access.intercept.AuthorizationFilter@578198d9]
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:39:36 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Started EmployeeControllerWebMvcTest in 0.142 seconds (process running for 2.535)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Starting MeControllerWebMvcTest using Java 17.0.18 with PID 42224 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: dd666c4b-2c17-4c9a-9f03-2b8ad54e6906
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:39:36 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:39:36 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ff23bd1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62f305bc, org.springframework.security.web.context.SecurityContextHolderFilter@58e7f930, org.springframework.security.web.header.HeaderWriterFilter@1bb0fa38, org.springframework.web.filter.CorsFilter@729c8def, org.springframework.security.web.csrf.CsrfFilter@6dfebd2a, org.springframework.security.web.authentication.logout.LogoutFilter@6fdd3382, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19355a56, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@406808eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14e93c46, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41c88e00, org.springframework.security.web.access.ExceptionTranslationFilter@9dbb1d9, org.springframework.security.web.access.intercept.AuthorizationFilter@32245b66]
+2026-02-22 04:39:36 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:39:36 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Started MeControllerWebMvcTest in 0.112 seconds (process running for 2.673)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - Starting OrderControllerWebMvcTest using Java 17.0.18 with PID 42224 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:39:36 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:39:37 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f7543d51-06d0-4ad2-a4ff-c71d8424b6d9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:39:37 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:39:37 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ddcd3d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@447a557b, org.springframework.security.web.context.SecurityContextHolderFilter@15ea0ca3, org.springframework.security.web.header.HeaderWriterFilter@18ad085a, org.springframework.web.filter.CorsFilter@7cab8d52, org.springframework.security.web.csrf.CsrfFilter@2e488e45, org.springframework.security.web.authentication.logout.LogoutFilter@7bc4ac3e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59263f7b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f3a92fd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e111e08, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@141eb85b, org.springframework.security.web.access.ExceptionTranslationFilter@396519b, org.springframework.security.web.access.intercept.AuthorizationFilter@16e5c19f]
+2026-02-22 04:39:37 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:39:37 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:39:37 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:39:37 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:39:37 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - Started OrderControllerWebMvcTest in 0.23 seconds (process running for 2.942)
+2026-02-22 04:39:37 [main] ERROR c.e.r.a.s.p.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.server.ResponseStatusException: 403 FORBIDDEN "Clients can access only their own orders"
+	at com.epam.rd.autocode.spring.project.controller.OrderController.getOrdersByClient(OrderController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at mytests.com.epam.rd.autocode.spring.project.controller.OrderControllerWebMvcTest.byClient_clientCannotAccessOtherClientsOrders_403(OrderControllerWebMvcTest.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:231)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2026-02-22 04:41:09 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:41:09 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Starting BookControllerWebMvcTest using Java 17.0.18 with PID 31536 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:41:09 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:41:10 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4a32fdd7-52cd-4617-a592-0de9ff5c46dc
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:41:10 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:41:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@542c65d9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cdbe995, org.springframework.security.web.context.SecurityContextHolderFilter@255ed8e4, org.springframework.security.web.header.HeaderWriterFilter@3b4bd341, org.springframework.web.filter.CorsFilter@7dd45c93, org.springframework.security.web.csrf.CsrfFilter@274bae2c, org.springframework.security.web.authentication.logout.LogoutFilter@63a7781, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e3ee128, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a7bc16b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1186374c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@374b6e33, org.springframework.security.web.access.ExceptionTranslationFilter@4f8659d0, org.springframework.security.web.access.intercept.AuthorizationFilter@379f9555]
+2026-02-22 04:41:10 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:41:10 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:41:10 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:41:10 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:41:10 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Started BookControllerWebMvcTest in 1.557 seconds (process running for 2.229)
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Starting ClientControllerWebMvcTest using Java 17.0.18 with PID 31536 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:41:11 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 681c4c59-937a-42bf-a59d-d9df6a2e2910
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:41:11 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:41:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f89ad03, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f287a4e, org.springframework.security.web.context.SecurityContextHolderFilter@39420d59, org.springframework.security.web.header.HeaderWriterFilter@dcdb883, org.springframework.web.filter.CorsFilter@3879feec, org.springframework.security.web.csrf.CsrfFilter@42e4431, org.springframework.security.web.authentication.logout.LogoutFilter@14ba7f15, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@280c3dc0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fbbd98c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dd227b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71d2261e, org.springframework.security.web.access.ExceptionTranslationFilter@5e198c40, org.springframework.security.web.access.intercept.AuthorizationFilter@497fd334]
+2026-02-22 04:41:11 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:41:11 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:41:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:41:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Started ClientControllerWebMvcTest in 0.217 seconds (process running for 2.833)
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Starting EmployeeControllerWebMvcTest using Java 17.0.18 with PID 31536 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:41:11 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 1a0bae9a-dc9d-4e6b-95bc-19164424e9b2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:41:11 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:41:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d108063, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b272860, org.springframework.security.web.context.SecurityContextHolderFilter@3c468360, org.springframework.security.web.header.HeaderWriterFilter@382608d0, org.springframework.web.filter.CorsFilter@4351d055, org.springframework.security.web.csrf.CsrfFilter@45302e66, org.springframework.security.web.authentication.logout.LogoutFilter@1e489957, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@27c827ec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7841c990, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e75bef1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25c06894, org.springframework.security.web.access.ExceptionTranslationFilter@47c422d3, org.springframework.security.web.access.intercept.AuthorizationFilter@5b827796]
+2026-02-22 04:41:11 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:41:11 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:41:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:41:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Started EmployeeControllerWebMvcTest in 0.159 seconds (process running for 3.054)
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Starting MeControllerWebMvcTest using Java 17.0.18 with PID 31536 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:41:11 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fa17cde0-84fb-44e8-bbd5-2f670ccfcb70
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:41:11 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:41:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22942eff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26bbbe9e, org.springframework.security.web.context.SecurityContextHolderFilter@1e7797db, org.springframework.security.web.header.HeaderWriterFilter@2530baf6, org.springframework.web.filter.CorsFilter@2ebd6a0d, org.springframework.security.web.csrf.CsrfFilter@81a56b2, org.springframework.security.web.authentication.logout.LogoutFilter@6d6ddeb5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@218fc40d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4402ed61, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fc1a1d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@714d7c7b, org.springframework.security.web.access.ExceptionTranslationFilter@488c6c98, org.springframework.security.web.access.intercept.AuthorizationFilter@5cfa9e8a]
+2026-02-22 04:41:11 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:41:11 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:41:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:41:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:41:11 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Started MeControllerWebMvcTest in 0.133 seconds (process running for 3.217)
+2026-02-22 04:41:12 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - Starting OrderControllerWebMvcTest using Java 17.0.18 with PID 31536 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:41:12 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:41:12 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4e6c5184-34c9-4362-bf78-7185b5bfa2ad
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:41:12 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:41:12 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29ceefb3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f14d079, org.springframework.security.web.context.SecurityContextHolderFilter@484b187c, org.springframework.security.web.header.HeaderWriterFilter@6b6d8671, org.springframework.web.filter.CorsFilter@d0456ad, org.springframework.security.web.csrf.CsrfFilter@5a9004e1, org.springframework.security.web.authentication.logout.LogoutFilter@6ed87b1c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@46374b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1226ba98, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79194b1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12dd3501, org.springframework.security.web.access.ExceptionTranslationFilter@17af9f67, org.springframework.security.web.access.intercept.AuthorizationFilter@7aff1db3]
+2026-02-22 04:41:12 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:41:12 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:41:12 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:41:12 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:41:12 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - Started OrderControllerWebMvcTest in 0.237 seconds (process running for 3.498)
+2026-02-22 04:41:12 [main] ERROR c.e.r.a.s.p.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.server.ResponseStatusException: 403 FORBIDDEN "Clients can access only their own orders"
+	at com.epam.rd.autocode.spring.project.controller.OrderController.getOrdersByClient(OrderController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at mytests.com.epam.rd.autocode.spring.project.controller.OrderControllerWebMvcTest.byClient_clientCannotAccessOtherClientsOrders_403(OrderControllerWebMvcTest.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:231)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2026-02-22 04:42:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-22 04:42:22 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Starting BookControllerWebMvcTest using Java 17.0.18 with PID 45540 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:42:22 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:42:23 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 863170bc-3f54-4a9e-bc15-a306e1e21289
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:42:23 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:42:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1584c019, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3688baab, org.springframework.security.web.context.SecurityContextHolderFilter@43c0c13a, org.springframework.security.web.header.HeaderWriterFilter@20820df0, org.springframework.web.filter.CorsFilter@4fe2dd02, org.springframework.security.web.csrf.CsrfFilter@5beb6be2, org.springframework.security.web.authentication.logout.LogoutFilter@84f51d9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@53ba1175, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67941d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ad2b274, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ba060af, org.springframework.security.web.access.ExceptionTranslationFilter@42cc5460, org.springframework.security.web.access.intercept.AuthorizationFilter@7ed7ae]
+2026-02-22 04:42:23 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:42:23 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:42:23 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:42:23 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:42:23 [main] INFO  m.c.e.r.a.s.p.c.BookControllerWebMvcTest - Started BookControllerWebMvcTest in 1.389 seconds (process running for 1.969)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Starting ClientControllerWebMvcTest using Java 17.0.18 with PID 45540 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:42:24 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7bd63c1c-4a6a-472e-ae23-73004edfe651
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:42:24 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:42:24 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73c09a98, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f2bf657, org.springframework.security.web.context.SecurityContextHolderFilter@f287a4e, org.springframework.security.web.header.HeaderWriterFilter@6f89ad03, org.springframework.web.filter.CorsFilter@27d6467, org.springframework.security.web.csrf.CsrfFilter@497fd334, org.springframework.security.web.authentication.logout.LogoutFilter@1fa796a4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50f13494, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3879feec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71d2261e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bf1b528, org.springframework.security.web.access.ExceptionTranslationFilter@280c3dc0, org.springframework.security.web.access.intercept.AuthorizationFilter@8dcacf1]
+2026-02-22 04:42:24 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:42:24 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:42:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:42:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.ClientControllerWebMvcTest - Started ClientControllerWebMvcTest in 0.209 seconds (process running for 2.525)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Starting EmployeeControllerWebMvcTest using Java 17.0.18 with PID 45540 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:42:24 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 472ab08b-45c0-48d4-b00e-c4fcc86e4c83
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:42:24 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:42:24 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a88849, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36ce0bc2, org.springframework.security.web.context.SecurityContextHolderFilter@b272860, org.springframework.security.web.header.HeaderWriterFilter@7d108063, org.springframework.web.filter.CorsFilter@317fa5dd, org.springframework.security.web.csrf.CsrfFilter@5b827796, org.springframework.security.web.authentication.logout.LogoutFilter@6e7cb01a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@e5f05f8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4351d055, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25c06894, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@477906cf, org.springframework.security.web.access.ExceptionTranslationFilter@27c827ec, org.springframework.security.web.access.intercept.AuthorizationFilter@5c04ec8]
+2026-02-22 04:42:24 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:42:24 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:42:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:42:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.EmployeeControllerWebMvcTest - Started EmployeeControllerWebMvcTest in 0.145 seconds (process running for 2.731)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Starting MeControllerWebMvcTest using Java 17.0.18 with PID 45540 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:42:24 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 40e7fc50-f4fe-4118-a4cd-833767ccc1b9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:42:24 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:42:24 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d164938, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4cd079fe, org.springframework.security.web.context.SecurityContextHolderFilter@26bbbe9e, org.springframework.security.web.header.HeaderWriterFilter@22942eff, org.springframework.web.filter.CorsFilter@37823482, org.springframework.security.web.csrf.CsrfFilter@5cfa9e8a, org.springframework.security.web.authentication.logout.LogoutFilter@99948fe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4e8b36af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ebd6a0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@714d7c7b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@202b5293, org.springframework.security.web.access.ExceptionTranslationFilter@218fc40d, org.springframework.security.web.access.intercept.AuthorizationFilter@5605a59b]
+2026-02-22 04:42:24 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:42:24 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:42:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:42:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.MeControllerWebMvcTest - Started MeControllerWebMvcTest in 0.109 seconds (process running for 2.867)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - Starting OrderControllerWebMvcTest using Java 17.0.18 with PID 45540 (started by misha in C:\Users\misha\Desktop\book-store-service-task)
+2026-02-22 04:42:24 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-22 04:42:25 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: dc4571c8-a30e-4a4b-8ea8-63d83d9523e0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-22 04:42:25 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-22 04:42:25 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c4a1980, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2125086c, org.springframework.security.web.context.SecurityContextHolderFilter@f14d079, org.springframework.security.web.header.HeaderWriterFilter@29ceefb3, org.springframework.web.filter.CorsFilter@65c634f2, org.springframework.security.web.csrf.CsrfFilter@7aff1db3, org.springframework.security.web.authentication.logout.LogoutFilter@650e6569, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7a791e8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d0456ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12dd3501, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57f9f387, org.springframework.security.web.access.ExceptionTranslationFilter@46374b8, org.springframework.security.web.access.intercept.AuthorizationFilter@311eb725]
+2026-02-22 04:42:25 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-22 04:42:25 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-22 04:42:25 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-22 04:42:25 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-22 04:42:25 [main] INFO  m.c.e.r.a.s.p.c.OrderControllerWebMvcTest - Started OrderControllerWebMvcTest in 0.2 seconds (process running for 3.102)

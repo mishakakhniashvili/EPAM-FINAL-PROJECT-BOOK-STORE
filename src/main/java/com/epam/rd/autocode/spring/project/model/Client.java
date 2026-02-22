@@ -17,7 +17,6 @@ public class Client extends User {
         this.balance = balance;
     }
 
-
     @Column(name = "BALANCE", nullable = false, precision = 19, scale = 2)
     private BigDecimal balance = BigDecimal.ZERO;
 
