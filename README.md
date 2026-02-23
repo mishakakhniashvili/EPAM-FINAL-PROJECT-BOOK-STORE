@@ -1,3 +1,12 @@
+https://book-store-service-task.onrender.com
+Note: This site is hosted on Render, so the first load after inactivity may take a moment to start (cold start).
+
+Test client credentials:
+
+Email: client1@example.com
+
+Password: client123
+
 # Book Store. Spring Project
 
 The purpose of this task is to check your knowledge and understanding in Java and Spring.
