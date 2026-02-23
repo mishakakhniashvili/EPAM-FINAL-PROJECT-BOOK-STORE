@@ -33,7 +33,7 @@
     </section>
 </main>
 <script>
-    fetch('/csrf', { credentials: 'same-origin' })
+    fetch('/csrf', {credentials: 'same-origin'})
         .then(r => r.json())
         .then(csrf => {
             const form = document.querySelector('form');

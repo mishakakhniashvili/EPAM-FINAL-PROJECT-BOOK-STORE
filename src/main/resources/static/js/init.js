@@ -6,7 +6,8 @@
 
     if (typeof addItemRow === 'function') addItemRow('', 1);
     // preload CSRF (so first POST works immediately)
-    ensureCsrf().catch(() => {});
+    ensureCsrf().catch(() => {
+    });
 
     // default datetime-local = now
     const dt = new Date();
@@ -17,5 +18,6 @@
     if (orderDateInput) orderDateInput.value = local;
 
     loadBooks().catch(show);
-    loadMeAndApplyAccess().catch(() => {});
+    loadMeAndApplyAccess().catch(() => {
+    });
 })();

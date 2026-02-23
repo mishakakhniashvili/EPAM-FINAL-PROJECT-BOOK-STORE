@@ -112,7 +112,7 @@ document.getElementById('btn-add-item')?.addEventListener('click', () => addItem
 async function showOrders(data, endpoint) {
     const arr = Array.isArray(data) ? data : [data];
     if (ordersPre) ordersPre.textContent = arr.map(o => JSON.stringify(o, null, 2)).join('\n\n---\n\n');
-    show({ ok: true, count: arr.length, endpoint });
+    show({ok: true, count: arr.length, endpoint});
 }
 
 document.getElementById('form-orders-by-client')?.addEventListener('submit', async (e) => {
@@ -123,7 +123,9 @@ document.getElementById('form-orders-by-client')?.addEventListener('submit', asy
         const data = email ? await api('GET', '/orders/by_client/' + encodePath(email))
             : await api('GET', '/orders/my');
         await showOrders(data, email ? `GET /orders/by_client/${email}` : 'GET /orders/my');
-    } catch (err) { show(err); }
+    } catch (err) {
+        show(err);
+    }
 });
 
 document.getElementById('form-orders-by-employee')?.addEventListener('submit', async (e) => {
@@ -134,7 +136,9 @@ document.getElementById('form-orders-by-employee')?.addEventListener('submit', a
     try {
         const data = await api('GET', '/orders/by_employee/' + encodePath(email));
         await showOrders(data, `GET /orders/by_employee/${email}`);
-    } catch (err) { show(err); }
+    } catch (err) {
+        show(err);
+    }
 });
 
 document.getElementById('form-order-delete')?.addEventListener('submit', async (e) => {
@@ -144,8 +148,10 @@ document.getElementById('form-order-delete')?.addEventListener('submit', async (
 
     try {
         await api('DELETE', '/orders/' + encodePath(id));
-        show({ ok: true, deletedOrderId: id, endpoint: `DELETE /orders/${id}` });
-    } catch (err) { show(err); }
+        show({ok: true, deletedOrderId: id, endpoint: `DELETE /orders/${id}`});
+    } catch (err) {
+        show(err);
+    }
 });
 
 document.getElementById('form-order-create')?.addEventListener('submit', async (e) => {
@@ -170,5 +176,7 @@ document.getElementById('form-order-create')?.addEventListener('submit', async (
 
         const created = await api('POST', '/orders', body);
         await showOrders(created, 'POST /orders');
-    } catch (err) { show(err); }
+    } catch (err) {
+        show(err);
+    }
 });

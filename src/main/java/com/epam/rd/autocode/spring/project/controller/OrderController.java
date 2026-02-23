@@ -2,22 +2,20 @@ package com.epam.rd.autocode.spring.project.controller;
 
 import com.epam.rd.autocode.spring.project.dto.OrderDTO;
 import com.epam.rd.autocode.spring.project.exception.NotFoundException;
-import com.epam.rd.autocode.spring.project.model.Employee;
 import com.epam.rd.autocode.spring.project.repo.EmployeeRepository;
 import com.epam.rd.autocode.spring.project.repo.OrderRepository;
 import com.epam.rd.autocode.spring.project.service.OrderService;
-import jakarta.validation.Valid;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import jakarta.validation.Validator;
-import jakarta.validation.ConstraintViolation;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
@@ -27,6 +25,7 @@ public class OrderController {
     private final OrderService orderService;
     private final EmployeeRepository employeeRepository;
     private final Validator validator;
+
     @GetMapping("/by_client/{email:.+}")
     public List<OrderDTO> getOrdersByClient(@PathVariable String email, Authentication auth) {
         boolean isClient = auth.getAuthorities().stream()
@@ -54,6 +53,7 @@ public class OrderController {
 
         throw new ResponseStatusException(HttpStatus.FORBIDDEN);
     }
+
     @PostMapping
     public OrderDTO addOrder(@RequestBody OrderDTO dto, Authentication auth) {
 
@@ -93,7 +93,7 @@ public class OrderController {
                 .orElseThrow(() -> new NotFoundException("Order not found: " + id));
 
         boolean isEmployee = auth.getAuthorities().stream().anyMatch(a -> "ROLE_EMPLOYEE".equals(a.getAuthority()));
-        boolean isClient   = auth.getAuthorities().stream().anyMatch(a -> "ROLE_CLIENT".equals(a.getAuthority()));
+        boolean isClient = auth.getAuthorities().stream().anyMatch(a -> "ROLE_CLIENT".equals(a.getAuthority()));
 
         if (isClient) {
             // adjust this line if your Order model field names differ

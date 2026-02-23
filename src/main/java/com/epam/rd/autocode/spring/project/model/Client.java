@@ -1,6 +1,9 @@
 package com.epam.rd.autocode.spring.project.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.math.BigDecimal;
 
 @Entity
@@ -8,6 +11,9 @@ import java.math.BigDecimal;
 public class Client extends User {
     @Column(nullable = false, columnDefinition = "boolean default false")
     private boolean blocked = false;
+    @Column(name = "BALANCE", nullable = false, precision = 19, scale = 2)
+    private BigDecimal balance = BigDecimal.ZERO;
+
     public Client() {
         super();
     }
@@ -17,14 +23,19 @@ public class Client extends User {
         this.balance = balance;
     }
 
-    @Column(name = "BALANCE", nullable = false, precision = 19, scale = 2)
-    private BigDecimal balance = BigDecimal.ZERO;
+    public BigDecimal getBalance() {
+        return balance;
+    }
 
-    public BigDecimal getBalance() { return balance; }
-    public void setBalance(BigDecimal balance) { this.balance = balance; }
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
 
     public boolean isBlocked() {
         return blocked;
     }
-    public void setBlocked(boolean blocked) { this.blocked = blocked; }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
 }

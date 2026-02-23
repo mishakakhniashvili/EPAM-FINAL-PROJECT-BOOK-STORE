@@ -42,6 +42,7 @@ public class ProfileController {
         EmployeeDTO updated = employeeService.updateEmployeeByEmail(email, dto);
         return Map.of("role", "EMPLOYEE", "profile", updated);
     }
+
     @PutMapping
     public Map<String, Object> updateMyClientProfile(Authentication auth, @RequestBody @Valid ClientDTO dto) {
         String email = auth.getName();

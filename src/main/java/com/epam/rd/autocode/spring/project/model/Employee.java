@@ -1,11 +1,19 @@
 package com.epam.rd.autocode.spring.project.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee extends User {
+    @Column(name = "PHONE")
+    private String phone;
+    @Column(name = "BIRTH_DATE")
+    private LocalDate birthDate;
+
     public Employee() {
         super();
     }
@@ -16,15 +24,19 @@ public class Employee extends User {
         this.birthDate = birthDate;
     }
 
-    @Column(name = "PHONE")
-    private String phone;
+    public String getPhone() {
+        return phone;
+    }
 
-    @Column(name = "BIRTH_DATE")
-    private LocalDate birthDate;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
 
-    public LocalDate getBirthDate() { return birthDate; }
-    public void setBirthDate(LocalDate birthDate) { this.birthDate = birthDate; }
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 }

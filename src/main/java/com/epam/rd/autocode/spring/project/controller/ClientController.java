@@ -24,11 +24,13 @@ public class ClientController {
     public ClientDTO getClientByEmail(@PathVariable String email) {
         return clientService.getClientByEmail(email);
     }
+
     @Valid
     @PostMapping
     public ClientDTO addClient(@RequestBody @Valid ClientDTO dto) {
         return clientService.addClient(dto);
     }
+
     @Valid
     @PutMapping("/{email:.+}")
     public ClientDTO updateClientByEmail(@PathVariable String email, @RequestBody @Valid ClientDTO dto) {

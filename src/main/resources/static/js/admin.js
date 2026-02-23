@@ -11,8 +11,9 @@ async function loadClients() {
       <td>${escapeHtml(c.balance ?? '')}</td>
     </tr>
   `).join('');
-    show({ ok: true, count: data.length, endpoint: 'GET /clients' });
+    show({ok: true, count: data.length, endpoint: 'GET /clients'});
 }
+
 document.getElementById('form-book-update')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const f = e.target;
@@ -31,14 +32,22 @@ document.getElementById('form-book-update')?.addEventListener('submit', async (e
     if (f.characteristics.value.trim()) body.characteristics = f.characteristics.value.trim();
     if (f.description.value.trim()) body.description = f.description.value.trim();
 
-    if (!pathName) { show('Enter book name to update.'); return; }
-    if (Object.keys(body).length === 0) { show('Fill at least one field to update.'); return; }
+    if (!pathName) {
+        show('Enter book name to update.');
+        return;
+    }
+    if (Object.keys(body).length === 0) {
+        show('Fill at least one field to update.');
+        return;
+    }
 
     try {
         const updated = await api('PATCH', '/books/' + encodePath(pathName), body);
         show(updated);
         await loadBooks();
-    } catch (err) { show(err); }
+    } catch (err) {
+        show(err);
+    }
 });
 document.getElementById('btn-clients-refresh')
     ?.addEventListener('click', () => loadClients().catch(show));
@@ -73,8 +82,14 @@ document.getElementById('form-client-update')?.addEventListener('submit', async 
     if (f.name?.value?.trim()) body.name = f.name.value.trim();
     if (f.balance?.value !== undefined && f.balance.value !== '') body.balance = Number(f.balance.value);
 
-    if (!email) { show('Enter client email to update.'); return; }
-    if (Object.keys(body).length === 0) { show('Fill at least one field to update.'); return; }
+    if (!email) {
+        show('Enter client email to update.');
+        return;
+    }
+    if (Object.keys(body).length === 0) {
+        show('Fill at least one field to update.');
+        return;
+    }
 
     try {
         const res = await api('PATCH', '/clients/' + encodePath(email), body);
@@ -112,7 +127,7 @@ async function loadEmployees() {
       <td>${escapeHtml(emp.phone ?? '')}</td>
     </tr>
   `).join('');
-    show({ ok: true, count: data.length, endpoint: 'GET /employees' });
+    show({ok: true, count: data.length, endpoint: 'GET /employees'});
 }
 
 document.getElementById('btn-employees-refresh')
@@ -149,14 +164,22 @@ document.getElementById('form-employee-update')?.addEventListener('submit', asyn
     if (f.birthDate.value) body.birthDate = f.birthDate.value;
     if (f.phone.value.trim()) body.phone = f.phone.value.trim();
 
-    if (!pathEmail) { show('Enter employee email to update.'); return; }
-    if (Object.keys(body).length === 0) { show('Fill at least one field to update.'); return; }
+    if (!pathEmail) {
+        show('Enter employee email to update.');
+        return;
+    }
+    if (Object.keys(body).length === 0) {
+        show('Fill at least one field to update.');
+        return;
+    }
 
     try {
         const updated = await api('PATCH', '/employees/' + encodePath(pathEmail), body);
         show(updated);
         await loadEmployees();
-    } catch (err) { show(err); }
+    } catch (err) {
+        show(err);
+    }
 });
 document.getElementById('form-employee-delete')?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -242,7 +265,7 @@ document.getElementById('form-book-delete')?.addEventListener('submit', async (e
     const name = e.target.elements['name'].value.trim();
     try {
         await api('DELETE', '/books/' + encodePath(name));
-        show({ ok: true, deleted: name, endpoint: 'DELETE /books/' + name });
+        show({ok: true, deleted: name, endpoint: 'DELETE /books/' + name});
         await loadBooks();
     } catch (err) {
         show(err);

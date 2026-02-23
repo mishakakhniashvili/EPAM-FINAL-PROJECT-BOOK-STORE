@@ -16,12 +16,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderDTO {
-    @NotBlank @Email
+    @NotBlank
+    @Email
     private String clientEmail;
-    @NotBlank @Email
+    @NotBlank
+    @Email
     private String employeeEmail;
     private LocalDateTime orderDate;
     private BigDecimal price;
-    @NotEmpty @Valid
+    @NotEmpty
+    @Valid
     private List<BookItemDTO> bookItems;
 }

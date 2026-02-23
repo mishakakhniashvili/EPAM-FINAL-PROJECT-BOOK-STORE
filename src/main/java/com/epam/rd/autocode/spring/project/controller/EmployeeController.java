@@ -24,11 +24,13 @@ public class EmployeeController {
     public EmployeeDTO getEmployeeByEmail(@PathVariable String email) {
         return employeeService.getEmployeeByEmail(email);
     }
+
     @Valid
     @PostMapping
     public EmployeeDTO addEmployee(@RequestBody @Valid EmployeeDTO dto) {
         return employeeService.addEmployee(dto);
     }
+
     @Valid
     @PutMapping("/{email:.+}")
     public EmployeeDTO updateEmployeeByEmail(@PathVariable String email, @RequestBody @Valid EmployeeDTO dto) {

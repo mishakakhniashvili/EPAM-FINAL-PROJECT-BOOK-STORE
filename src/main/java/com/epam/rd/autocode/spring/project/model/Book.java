@@ -10,7 +10,34 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "BOOKS")
 public class Book {
-    public Book() { }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "NAME", nullable = false, unique = true)
+    private String name;
+    @Column(name = "GENRE")
+    private String genre;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "AGE_GROUP")
+    private AgeGroup ageGroup;
+    @Column(name = "PRICE", precision = 19, scale = 2)
+    private BigDecimal price;
+    @Column(name = "PUBLICATION_DATE")
+    private LocalDate publicationDate;
+    @Column(name = "AUTHOR")
+    private String author;
+    @Column(name = "NUMBER_OF_PAGES")
+    private Integer pages;
+    @Column(name = "CHARACTERISTICS", length = 2000)
+    private String characteristics;
+    @Column(name = "DESCRIPTION", length = 4000)
+    private String description;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "LANGUAGE")
+    private Language language;
+
+    public Book() {
+    }
 
     public Book(Long id,
                 String name,
@@ -36,72 +63,87 @@ public class Book {
         this.language = language;
     }
 
+    public Long getId() {
+        return id;
+    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public String getName() {
+        return name;
+    }
 
-    @Column(name = "NAME", nullable = false, unique = true)
-    private String name;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    @Column(name = "GENRE")
-    private String genre;
+    public String getGenre() {
+        return genre;
+    }
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "AGE_GROUP")
-    private AgeGroup ageGroup;
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
-    @Column(name = "PRICE", precision = 19, scale = 2)
-    private BigDecimal price;
+    public AgeGroup getAgeGroup() {
+        return ageGroup;
+    }
 
-    @Column(name = "PUBLICATION_DATE")
-    private LocalDate publicationDate;
+    public void setAgeGroup(AgeGroup ageGroup) {
+        this.ageGroup = ageGroup;
+    }
 
-    @Column(name = "AUTHOR")
-    private String author;
+    public BigDecimal getPrice() {
+        return price;
+    }
 
-    @Column(name = "NUMBER_OF_PAGES")
-    private Integer pages;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
-    @Column(name = "CHARACTERISTICS", length = 2000)
-    private String characteristics;
+    public LocalDate getPublicationDate() {
+        return publicationDate;
+    }
 
-    @Column(name = "DESCRIPTION", length = 4000)
-    private String description;
+    public void setPublicationDate(LocalDate publicationDate) {
+        this.publicationDate = publicationDate;
+    }
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "LANGUAGE")
-    private Language language;
+    public String getAuthor() {
+        return author;
+    }
 
-    public Long getId() { return id; }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public Integer getPages() {
+        return pages;
+    }
 
-    public String getGenre() { return genre; }
-    public void setGenre(String genre) { this.genre = genre; }
+    public void setPages(Integer pages) {
+        this.pages = pages;
+    }
 
-    public AgeGroup getAgeGroup() { return ageGroup; }
-    public void setAgeGroup(AgeGroup ageGroup) { this.ageGroup = ageGroup; }
+    public String getCharacteristics() {
+        return characteristics;
+    }
 
-    public BigDecimal getPrice() { return price; }
-    public void setPrice(BigDecimal price) { this.price = price; }
+    public void setCharacteristics(String characteristics) {
+        this.characteristics = characteristics;
+    }
 
-    public LocalDate getPublicationDate() { return publicationDate; }
-    public void setPublicationDate(LocalDate publicationDate) { this.publicationDate = publicationDate; }
+    public String getDescription() {
+        return description;
+    }
 
-    public String getAuthor() { return author; }
-    public void setAuthor(String author) { this.author = author; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public Integer getPages() { return pages; }
-    public void setPages(Integer pages) { this.pages = pages; }
+    public Language getLanguage() {
+        return language;
+    }
 
-    public String getCharacteristics() { return characteristics; }
-    public void setCharacteristics(String characteristics) { this.characteristics = characteristics; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public Language getLanguage() { return language; }
-    public void setLanguage(Language language) { this.language = language; }
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
 }

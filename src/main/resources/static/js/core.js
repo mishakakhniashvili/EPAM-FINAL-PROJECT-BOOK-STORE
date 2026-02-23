@@ -1,4 +1,3 @@
-// app.js (full, with CSRF fix via /csrf response token)
 
 const out = document.getElementById('out');
 const ordersPre = document.getElementById('orders-pre');
@@ -6,14 +5,20 @@ let CSRF = null;
 
 async function ensureCsrf() {
     if (CSRF) return CSRF;
-    const res = await fetch('/csrf', { credentials: 'same-origin' });
+    const res = await fetch('/csrf', {credentials: 'same-origin'});
     CSRF = await res.json(); // { token, headerName, parameterName }
     return CSRF;
 }
 
 function show(obj) {
-    if (obj == null) { out.textContent = ''; return; }
-    if (typeof obj === 'string') { out.textContent = obj; return; }
+    if (obj == null) {
+        out.textContent = '';
+        return;
+    }
+    if (typeof obj === 'string') {
+        out.textContent = obj;
+        return;
+    }
 
     if (obj.ok === true && obj.endpoint) {
         const count = (obj.count !== undefined && obj.count !== null) ? ` (count: ${obj.count})` : '';
@@ -28,9 +33,11 @@ function show(obj) {
 
     out.textContent = JSON.stringify(obj, null, 2);
 }
+
 function encodePath(value) {
     return encodeURIComponent(value);
 }
+
 function toLocalDateTime(dtLocalValue) {
     // datetime-local -> "YYYY-MM-DDTHH:mm" (no seconds), add ":00"
     if (!dtLocalValue) return null;
@@ -43,7 +50,7 @@ async function api(method, url, body) {
     const opts = {
         method: upper,
         credentials: 'same-origin',
-        headers: { 'Accept': 'application/json' }
+        headers: {'Accept': 'application/json'}
     };
 
     const unsafe = !['GET', 'HEAD', 'OPTIONS'].includes(upper);
@@ -66,7 +73,7 @@ async function api(method, url, body) {
 
     if (!res.ok) {
         if (payload === '' || payload == null) {
-            throw { status: res.status, statusText: res.statusText, url };
+            throw {status: res.status, statusText: res.statusText, url};
         }
         throw payload;
     }
@@ -121,9 +128,11 @@ function escapeHtml(s) {
         .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
         .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 }
+
 function escapeAttr(s) {
     return escapeHtml(s).replaceAll('\n', ' ');
 }
+
 function getCookie(name) {
     const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
     return m ? decodeURIComponent(m.pop()) : '';

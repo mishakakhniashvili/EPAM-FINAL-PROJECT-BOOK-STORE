@@ -10,6 +10,24 @@ import java.util.List;
 @Entity
 @Table(name = "ORDERS")
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    // who bought
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "CLIENT_ID")
+    private Client client;
+    // who processed
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMPLOYEE_ID")
+    private Employee employee;
+    @Column(name = "ORDER_DATE", nullable = false)
+    private LocalDateTime orderDate;
+    @Column(name = "PRICE", precision = 19, scale = 2)
+    private BigDecimal price;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BookItem> bookItems = new ArrayList<>();
+
     public Order() {
     }
 
@@ -21,43 +39,48 @@ public class Order {
         this.price = price;
         this.bookItems = bookItems;
     }
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    // who bought
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "CLIENT_ID")
-    private Client client;
+    public Long getId() {
+        return id;
+    }
 
-    // who processed
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMPLOYEE_ID")
-    private Employee employee;
+    public Client getClient() {
+        return client;
+    }
 
-    @Column(name = "ORDER_DATE", nullable = false)
-    private LocalDateTime orderDate;
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
-    @Column(name = "PRICE", precision = 19, scale = 2)
-    private BigDecimal price;
+    public Employee getEmployee() {
+        return employee;
+    }
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BookItem> bookItems = new ArrayList<>();
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
-    public Long getId() { return id; }
+    public LocalDateTime getOrderDate() {
+        return orderDate;
+    }
 
-    public Client getClient() { return client; }
-    public void setClient(Client client) { this.client = client; }
+    public void setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
+    }
 
-    public Employee getEmployee() { return employee; }
-    public void setEmployee(Employee employee) { this.employee = employee; }
+    public BigDecimal getPrice() {
+        return price;
+    }
 
-    public LocalDateTime getOrderDate() { return orderDate; }
-    public void setOrderDate(LocalDateTime orderDate) { this.orderDate = orderDate; }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
-    public BigDecimal getPrice() { return price; }
-    public void setPrice(BigDecimal price) { this.price = price; }
+    public List<BookItem> getBookItems() {
+        return bookItems;
+    }
 
-    public List<BookItem> getBookItems() { return bookItems; }
-    public void setBookItems(List<BookItem> bookItems) { this.bookItems = bookItems; }
+    public void setBookItems(List<BookItem> bookItems) {
+        this.bookItems = bookItems;
+    }
 }

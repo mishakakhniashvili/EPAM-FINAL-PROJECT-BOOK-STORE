@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
@@ -30,12 +31,14 @@ public class ClientServiceImpl implements ClientService {
                 .map(c -> mapper.map(c, ClientDTO.class))
                 .toList();
     }
+
     @Override
     public ClientDTO getClientByEmail(String email) {
         Client client = clientRepository.findByEmail(email)
                 .orElseThrow(() -> new NotFoundException("Client not found: " + email));
         return mapper.map(client, ClientDTO.class);
     }
+
     @Transactional
     @Override
     public ClientDTO updateClientByEmail(String email, ClientDTO dto) {

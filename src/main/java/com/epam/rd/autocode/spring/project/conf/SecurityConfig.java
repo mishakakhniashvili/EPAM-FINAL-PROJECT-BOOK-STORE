@@ -1,5 +1,6 @@
 package com.epam.rd.autocode.spring.project.conf;
 
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -11,7 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+
 @Configuration
 public class SecurityConfig {
 
@@ -66,7 +67,7 @@ public class SecurityConfig {
                         // Employee: view orders assigned to employee
                         .requestMatchers(HttpMethod.GET, "/orders/by_employee/**").hasRole("EMPLOYEE")
                         // Employee: delete orders
-                        .requestMatchers(HttpMethod.DELETE, "/orders/**").hasAnyRole("EMPLOYEE","CLIENT")
+                        .requestMatchers(HttpMethod.DELETE, "/orders/**").hasAnyRole("EMPLOYEE", "CLIENT")
 
                         // ---------- "Who am I" ----------
                         .requestMatchers(HttpMethod.GET, "/me").authenticated()

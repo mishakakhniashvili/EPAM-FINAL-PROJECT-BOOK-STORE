@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class BookItemDTO {
     @NotBlank
     private String bookName;
-    @NotNull @Positive
+    @NotNull
+    @Positive
     private Integer quantity;
 }

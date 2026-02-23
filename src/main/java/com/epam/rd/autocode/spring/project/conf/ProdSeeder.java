@@ -141,11 +141,16 @@ public class ProdSeeder implements ApplicationRunner {
         }
     }
 
-    private record EmployeeSeed(String email, String name, LocalDate birthDate, String phone) {}
-    private record ClientSeed(String email, String name, BigDecimal balance) {}
+    private record EmployeeSeed(String email, String name, LocalDate birthDate, String phone) {
+    }
+
+    private record ClientSeed(String email, String name, BigDecimal balance) {
+    }
+
     private record BookSeed(
             String name, String genre, String ageGroup, String price,
             String publicationDate, String author, int pages,
             String characteristics, String description, String language
-    ) {}
+    ) {
+    }
 }

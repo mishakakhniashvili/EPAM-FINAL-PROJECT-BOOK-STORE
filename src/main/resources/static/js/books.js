@@ -55,6 +55,7 @@ bookModal?.querySelector('.modal-backdrop')?.addEventListener('click', closeBook
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && bookModal && !bookModal.hidden) closeBookModal();
 });
+
 async function loadBooks() {
     show(t('out_loading_books'));
     const data = await api('GET', '/books');
@@ -74,8 +75,9 @@ async function loadBooks() {
     </tr>
   `).join('');
 
-    show({ ok: true, count: booksCache.length, endpoint: 'GET /books' });
+    show({ok: true, count: booksCache.length, endpoint: 'GET /books'});
 }
+
 booksTbody?.addEventListener('click', (e) => {
     const btn = e.target.closest('.btn-book-details');
     if (!btn) return;

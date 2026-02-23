@@ -1,4 +1,5 @@
 package com.epam.rd.autocode.spring.project.service.impl;
+
 import com.epam.rd.autocode.spring.project.dto.EmployeeDTO;
 import com.epam.rd.autocode.spring.project.exception.AlreadyExistException;
 import com.epam.rd.autocode.spring.project.exception.NotFoundException;
@@ -7,9 +8,9 @@ import com.epam.rd.autocode.spring.project.repo.EmployeeRepository;
 import com.epam.rd.autocode.spring.project.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -74,13 +75,14 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .orElseThrow(() -> new NotFoundException("Employee not found: " + email));
         employeeRepository.delete(employee);
     }
+
     private String encodeIfNeeded(String password) {
-                if (password == null) return null;
-                if (password.startsWith("$2a$") || password.startsWith("$2b$") || password.startsWith("$2y$")) {
-                        return password;
-                    }
-                return passwordEncoder.encode(password);
-           }
+        if (password == null) return null;
+        if (password.startsWith("$2a$") || password.startsWith("$2b$") || password.startsWith("$2y$")) {
+            return password;
+        }
+        return passwordEncoder.encode(password);
+    }
 
 
     @Transactional

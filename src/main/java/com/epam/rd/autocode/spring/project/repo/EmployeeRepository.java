@@ -9,14 +9,15 @@ import java.util.Optional;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     Optional<Employee> findByEmail(String email);
+
     boolean existsByEmail(String email);
 
     @Query("""
-select e.email
-from Employee e
-left join Order o on o.employee = e
-group by e.email
-order by count(o) asc, e.email asc
-""")
+            select e.email
+            from Employee e
+            left join Order o on o.employee = e
+            group by e.email
+            order by count(o) asc, e.email asc
+            """)
     List<String> findEmployeeEmailsOrderByLoad();
 }

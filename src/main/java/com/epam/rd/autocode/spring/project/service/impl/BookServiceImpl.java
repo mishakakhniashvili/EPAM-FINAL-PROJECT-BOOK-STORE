@@ -1,6 +1,7 @@
 package com.epam.rd.autocode.spring.project.service.impl;
 
 import com.epam.rd.autocode.spring.project.dto.BookDTO;
+import com.epam.rd.autocode.spring.project.exception.AlreadyExistException;
 import com.epam.rd.autocode.spring.project.exception.NotFoundException;
 import com.epam.rd.autocode.spring.project.model.Book;
 import com.epam.rd.autocode.spring.project.repo.BookRepository;
@@ -9,14 +10,16 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
-import com.epam.rd.autocode.spring.project.exception.AlreadyExistException;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final ModelMapper mapper;
+
     @Override
     public List<BookDTO> getAllBooks() {
         return bookRepository.findAll()
@@ -27,13 +30,14 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDTO getBookByName(String name) {
-        Book book =bookRepository.findByName(name)
+        Book book = bookRepository.findByName(name)
                 .orElseThrow(() -> new NotFoundException("Book not found: " + name));
         return mapper.map(book, BookDTO.class);
 
     }
 
-    @Override@Transactional
+    @Override
+    @Transactional
     public BookDTO updateBookByName(String name, BookDTO dto) {
         Book book = bookRepository.findByName(name)
                 .orElseThrow(() -> new NotFoundException("Book not found: " + name));
@@ -58,6 +62,7 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new NotFoundException("Book not found: " + name));
         bookRepository.delete(book);
     }
+
     @Override
     @Transactional
     public BookDTO addBook(BookDTO dto) {
@@ -89,7 +94,8 @@ public class BookServiceImpl implements BookService {
         if (dto.getPages() != null) book.setPages(dto.getPages());
         if (dto.getLanguage() != null) book.setLanguage(dto.getLanguage());
         if (dto.getAgeGroup() != null) book.setAgeGroup(dto.getAgeGroup());
-        if (dto.getCharacteristics() != null && !dto.getCharacteristics().isBlank()) book.setCharacteristics(dto.getCharacteristics());
+        if (dto.getCharacteristics() != null && !dto.getCharacteristics().isBlank())
+            book.setCharacteristics(dto.getCharacteristics());
         if (dto.getDescription() != null && !dto.getDescription().isBlank()) book.setDescription(dto.getDescription());
 
         return mapper.map(bookRepository.save(book), BookDTO.class);

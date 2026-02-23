@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findByClient_Email(String email);
+
     List<Order> findByEmployee_Email(String email);
+
     void deleteByClient_Email(String email);
 }

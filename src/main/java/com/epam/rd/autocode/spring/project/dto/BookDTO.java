@@ -12,23 +12,26 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookDTO{
+public class BookDTO {
     @NotBlank
     private String name;
     @NotBlank
     private String genre;
     @NotNull
     private AgeGroup ageGroup;
-    @NotNull @Positive
+    @NotNull
+    @Positive
     private BigDecimal price;
     @NotNull
     private LocalDate publicationDate;
     @NotBlank
     private String author;
-    @NotNull @Positive
+    @NotNull
+    @Positive
     private Integer pages;
     @NotBlank
     private String characteristics;
@@ -37,7 +40,7 @@ public class BookDTO{
     @NotNull
     private Language language;
 
-     private BookDTO toDto(Book b) {
+    private BookDTO toDto(Book b) {
         return new BookDTO(
                 b.getName(),
                 b.getGenre(),

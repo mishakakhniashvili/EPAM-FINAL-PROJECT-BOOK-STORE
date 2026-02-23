@@ -20,7 +20,7 @@ function renderAuth(me) {
     const loggedIn = !!user;
 
     authBox.textContent = loggedIn
-        ? t('auth_logged_as', { user, roles: roles.join(', ') })
+        ? t('auth_logged_as', {user, roles: roles.join(', ')})
         : t('auth_guest');
 
     btnLogin.style.display = loggedIn ? 'none' : '';
