@@ -96,7 +96,6 @@ public class OrderController {
         boolean isClient = auth.getAuthorities().stream().anyMatch(a -> "ROLE_CLIENT".equals(a.getAuthority()));
 
         if (isClient) {
-            // adjust this line if your Order model field names differ
             String ownerEmail = order.getClient().getEmail();
             if (!auth.getName().equalsIgnoreCase(ownerEmail)) {
                 throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Clients can delete only their own orders");

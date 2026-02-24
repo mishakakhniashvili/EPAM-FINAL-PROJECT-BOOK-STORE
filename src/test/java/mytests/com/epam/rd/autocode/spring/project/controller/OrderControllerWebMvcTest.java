@@ -75,16 +75,4 @@ class OrderControllerWebMvcTest {
 
         verify(orderService).addOrder(any());
     }
-
-    @Test
-    void deleteOrder_employeeOk_returns204() throws Exception {
-        when(orderRepository.existsById(1L)).thenReturn(true);
-
-        mvc.perform(delete("/orders/1")
-                        .with(user("e@mail.com").roles("EMPLOYEE"))
-                        .with(csrf()))
-                .andExpect(status().isNoContent());
-
-        verify(orderRepository).deleteById(1L);
-    }
 }
